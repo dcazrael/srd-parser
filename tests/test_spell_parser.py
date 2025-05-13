@@ -120,6 +120,39 @@ def test_fireball() -> None:
     assert spell.name == "Fireball"
     assert spell.level == 3
     assert spell.school == "Evocation"
+    assert spell.classes == ["Sorcerer", "Wizard"]
+    assert "dexterity saving throw" in spell.description.lower()
+
+    assert spell.casting_time.type == "action"
+    assert spell.casting_time.cost == 1
+
+    assert spell.range.distance == "150 feet"
+    assert spell.components.verbal is True
+    assert spell.components.somatic is True
+    assert spell.components.material.required is True
+    assert spell.components.material.description == "a ball of bat guano and sulfur"
+    assert spell.duration.type == "instantaneous"
+
+    assert spell.description.startswith("A bright streak flashes from you to a point you")
+
+    save_fail = next((e for e in spell.effects if e.trigger == "on_save_fail"), None)
+    assert save_fail is not None
+    assert save_fail.type == "damage"
+    assert any(di.dice == "8d6" and di.type == "fire" for di in save_fail.damage or [])
+
+    save_success = next((e for e in spell.effects if e.trigger == "on_save_success"), None)
+    assert save_success is not None
+    assert save_success.type == "damage"
+    assert save_success.copy_from == "on_save_fail"
+    assert save_success.modifier == "half"
+
+    assert spell.save.dc_source == "spellcasting"
+    assert spell.save.type == "dex"
+    assert spell.save.negates == False
+
+    assert spell.scaling.mode == "slot_level"
+    assert spell.scaling.base_level == 3
+
     assert any(e.trigger == "on_save_fail" and e.type == "damage" for e in spell.effects)
 
 def test_flame_blade() -> None:
@@ -149,6 +182,10 @@ def test_magic_missile() -> None:
 
 def test_moonbeam() -> None:
     spell: Spell = load_spell(f"{formatted_spell_name('Moonbeam')}.md")
+
+
+
+    print(repr(spell))
     assert spell.name == "Moonbeam"
     assert spell.level == 2
     assert spell.school == "Evocation"

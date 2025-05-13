@@ -1,7 +1,9 @@
 import argparse
 import json
 from dataclasses import asdict
-from parser.old_spell_parser import SpellParser
+
+from src.parser.spell_parser import SpellParser
+
 
 def cli():
     parser = argparse.ArgumentParser()
@@ -15,7 +17,7 @@ def cli():
     extractor = SpellParser(raw_text)
     extractor.parse()
 
-    extended_spells = [asdict(postprocess_spell(s)) for s in extractor.spells]
+    extended_spells = [s for s in extractor.spells]
 
     with open(args.outfile, "w", encoding="utf-8") as f:
         json.dump(extended_spells, f, indent=2, ensure_ascii=False)

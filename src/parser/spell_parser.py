@@ -43,7 +43,7 @@ class SpellParser:
         effects: List[Effect] = self._parse_effects(description)
         targeting: Targeting = self._parse_targeting(description)
         save: Optional[SaveInfo] = self._parse_save(description)
-        scaling: Optional[Scaling] = self._parse_scaling(description)
+        scaling: Optional[Scaling] = self._parse_scaling(sections['scales_with'])
         requirements: Optional[Requirements] = self._parse_requirements(description)
 
         return Spell(
@@ -95,6 +95,10 @@ class SpellParser:
                     sections[current_field] = field_value
                     continue
 
+                if "Higher-Level Spell Slot" in field_name or "Cantrip Upgrade" in field_name:
+                    sections["scales_with"] = f"{field_name} {field_value}"
+                    continue
+
                 if current_sub:
                     sections["subsections"].append(current_sub)
 
@@ -112,8 +116,6 @@ class SpellParser:
         if current_sub:
             sections["subsections"].append(current_sub)
 
-        if "Using a Higher-Level Spell Slot" in sections.get("description", ""):
-            sections["higher_level"] = sections["description"].split("**Using a Higher-Level Spell Slot**.")[1].strip()
 
         return sections
 
@@ -346,6 +348,15 @@ class SpellParser:
                 modifier="half"
             ))
 
+        # --- on_successful_save (modifier = half) ---
+        if re.search(r"half.*?damage.*?successful", lowered, re.IGNORECASE):
+            effects.append(Effect(
+                trigger="on_save_success",
+                type="damage",
+                copy_from="on_save_fail",
+                modifier="half"
+            ))
+
         return effects
 
     @staticmethod
@@ -353,9 +364,11 @@ class SpellParser:
         match: Optional[re.Match] = re.search(
             r"(strength|dexterity|constitution|intelligence|wisdom|charisma) saving throw", text, re.IGNORECASE)
         if match:
+            negates = not bool(
+                re.search(r"half (as much )?damage|take half damage|only take half", text, re.IGNORECASE))
             save_type: Literal["str", "dex", "con", "int", "wis", "cha"] = cast(
                 Literal["str", "dex", "con", "int", "wis", "cha"], match.group(1).lower()[:3])
-            return SaveInfo(type=save_type, dc_source="spellcasting", negates=True)
+            return SaveInfo(type=save_type, dc_source="spellcasting", negates=negates)
         return None
 
     def _parse_scaling(self, text: str) -> Optional[Scaling]:
