@@ -1,0 +1,19 @@
+[project]
+name = "dnd-srd-md2json"
+version = "0.1.0"
+description = "Parser to convert D&D SRD Markdown files to JSON"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+md2json = "main:cli"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -1,0 +1,340 @@
+name,level,has_spell_attack,has_save,has_ongoing,has_condition,has_area,has_repeatable,has_concentration
+Acid Arrow,2,True,False,True,False,False,False,False
+Acid Splash,0,False,True,False,False,True,False,False
+Aid,2,False,False,False,False,False,False,False
+Alarm,1,False,False,False,True,False,False,False
+Alter Self,2,False,False,False,False,False,False,False
+Animal Friendship,1,False,True,False,True,False,False,False
+Animal Messenger,2,False,True,False,True,False,False,False
+Animal Shapes,8,False,False,False,False,False,False,False
+Animate Dead,3,False,False,False,True,False,True,False
+Animate Objects,5,False,False,False,True,False,False,False
+Antilife Shell,5,False,False,False,True,False,False,False
+Antimagic Field,8,False,False,False,True,False,False,False
+Antipathy/Sympathy,8,False,True,False,True,False,False,False
+Arcane Eye,4,False,False,False,False,False,False,False
+Arcane Hand,5,False,False,False,True,False,False,False
+Arcane Lock,2,False,False,False,True,False,False,False
+Arcane Sword,7,True,False,False,False,False,False,False
+Arcanist’s Magic Aura,2,False,False,False,False,False,False,False
+Astral Projection,9,False,False,False,True,False,False,False
+Augury,2,False,False,False,True,False,False,False
+Aura of Life,4,False,False,False,False,False,False,False
+Awaken,5,False,False,False,True,False,False,False
+Bane,1,False,True,False,True,False,False,False
+Banishment,4,False,True,False,True,False,False,False
+Barkskin,2,False,False,False,True,False,False,False
+Beacon of Hope,3,False,True,False,False,False,False,False
+Befuddlement,8,False,True,False,False,False,False,False
+Bestow Curse,3,False,True,False,False,False,False,False
+Black Tentacles,4,False,True,False,True,False,False,False
+Blade Barrier,6,False,True,False,True,False,False,False
+Bless,1,False,True,False,False,False,False,False
+Blight,4,False,True,False,False,False,False,False
+Blindness/Deafness,2,False,True,False,True,False,False,False
+Blink,3,False,False,False,True,False,False,False
+Blur,2,False,False,False,True,False,False,False
+Burning Hands,1,False,True,False,False,True,False,False
+Call Lightning,3,False,True,False,True,True,False,False
+Calm Emotions,2,False,True,False,True,True,False,False
+Chain Lightning,6,False,True,False,False,False,False,False
+Charm Monster,4,False,True,False,True,False,False,False
+Charm Person,1,False,True,False,True,False,False,False
+Chill Touch,0,True,False,False,False,False,False,False
+Chromatic Orb,1,True,False,False,False,False,False,False
+Circle of Death,6,False,True,False,False,True,False,False
+Clairvoyance,3,False,False,False,True,False,False,False
+Clone,8,False,False,False,True,False,False,False
+Cloudkill,5,False,True,False,True,True,False,False
+Color Spray,1,False,True,False,True,True,False,False
+Command,1,False,True,False,False,False,False,False
+Commune,5,False,False,False,True,False,False,False
+Commune with Nature,5,False,False,False,True,True,False,False
+Comprehend Languages,1,False,False,False,True,False,False,False
+Compulsion,4,False,True,False,True,False,False,False
+Cone of Cold,5,False,True,False,True,True,False,False
+Confusion,4,False,True,False,False,True,False,False
+Conjure Animals,3,False,True,False,True,False,False,False
+Conjure Celestial,7,False,False,False,True,True,False,False
+Conjure Elemental,5,False,True,False,True,False,False,False
+Conjure Fey,6,False,False,False,True,False,False,False
+Conjure Minor Elementals,4,False,False,False,True,False,False,False
+Conjure Woodland Beings,4,False,True,False,True,False,False,False
+Contact Other Plane,5,False,True,False,True,False,False,False
+Contagion,5,False,True,False,True,False,False,False
+Contingency,6,False,False,False,True,False,False,False
+Continual Flame,2,False,False,False,False,True,False,False
+Control Water,4,False,False,False,True,False,False,False
+Control Weather,8,False,False,False,True,False,False,False
+Counterspell,3,False,True,False,True,False,False,False
+Create Food and Water,3,False,False,False,True,False,False,False
+Create or Destroy Water,1,False,False,False,False,False,False,False
+Create Undead,6,False,False,False,True,False,True,False
+Creation,5,False,False,False,True,False,False,False
+Cure Wounds,1,False,False,False,False,False,False,False
+Dancing Lights,0,False,False,False,True,True,False,False
+Darkness,2,False,False,False,True,True,False,False
+Darkvision,2,False,False,False,False,False,False,False
+Daylight,3,False,False,False,True,True,False,False
+Death Ward,4,False,False,False,True,False,False,False
+Delayed Blast Fireball,7,False,True,False,True,True,False,False
+Demiplane,8,False,False,False,True,False,False,False
+Detect Evil and Good,1,False,False,False,True,False,False,False
+Detect Magic,1,False,False,False,True,False,False,False
+Detect Poison and Disease,1,False,False,False,True,False,False,False
+Detect Thoughts,2,False,True,False,True,False,False,False
+Dimension Door,4,False,False,False,False,False,False,False
+Disguise Self,1,False,False,False,True,False,False,False
+Disintegrate,6,False,True,False,True,False,False,False
+Dispel Evil and Good,5,False,True,False,False,False,False,False
+Dispel Magic,3,False,False,False,False,False,False,False
+Dissonant Whispers,1,False,True,False,False,False,False,False
+Divination,4,False,False,False,True,False,False,False
+Divine Favor,1,False,False,False,False,False,False,False
+Divine Smite,1,False,False,False,True,False,False,False
+Divine Word,7,False,True,False,True,False,False,False
+Dominate Beast,4,False,True,False,True,False,False,False
+Dominate Monster,8,False,True,False,True,False,False,False
+Dominate Person,5,False,True,False,True,False,False,False
+Dragon’s Breath,2,False,True,False,False,True,False,False
+Dream,5,False,True,False,True,False,False,False
+Druidcraft,0,False,False,False,True,False,False,False
+Earthquake,8,False,True,False,True,True,False,True
+Eldritch Blast,0,True,False,False,False,False,False,False
+Elementalism,0,False,False,False,False,False,False,False
+Enhance Ability,2,False,False,False,False,False,False,False
+Enlarge/Reduce,2,False,True,False,True,False,False,False
+Ensnaring Strike,1,False,True,False,True,False,False,False
+Entangle,1,False,True,False,True,False,False,False
+Enthrall,2,False,True,False,True,False,False,False
+Etherealness,7,False,False,False,True,False,False,False
+Expeditious Retreat,1,False,False,False,False,False,False,False
+Eyebite,6,False,True,False,True,False,True,False
+Fabricate,4,False,False,False,True,False,False,False
+Faerie Fire,1,False,True,False,True,True,False,False
+Faithful Hound,4,False,True,False,True,False,False,False
+False Life,1,False,False,False,False,False,False,False
+Fear,3,False,True,False,True,True,False,False
+Feather Fall,1,False,False,False,False,False,False,False
+Find Familiar,1,False,False,False,True,False,False,False
+Find Steed,2,False,False,False,True,False,False,False
+Find the Path,6,False,False,False,True,False,False,False
+Find Traps,2,False,False,False,True,True,False,False
+Finger of Death,7,False,True,False,True,False,False,False
+Fireball,3,False,True,False,False,True,False,False
+Fire Bolt,0,True,False,False,True,False,False,False
+Fire Shield,4,False,False,False,False,True,False,False
+Fire Storm,7,False,True,False,False,False,False,False
+Flame Blade,2,True,False,False,True,True,False,False
+Flame Strike,5,False,True,False,False,True,False,False
+Flaming Sphere,2,False,True,False,False,True,False,False
+Flesh to Stone,6,False,True,False,True,False,False,True
+Floating Disk,1,False,False,False,True,False,False,False
+Fly,3,False,False,False,True,False,False,False
+Fog Cloud,1,False,False,False,True,True,False,False
+Forbiddance,6,False,False,False,True,False,False,False
+Forcecage,7,False,True,False,True,False,False,False
+Foresight,9,False,False,False,False,False,False,False
+Freedom of Movement,4,False,False,False,True,False,False,False
+Freezing Sphere,6,False,True,False,True,True,False,False
+Gaseous Form,3,False,True,False,True,False,False,False
+Gate,9,False,False,False,True,False,False,False
+Geas,5,False,True,False,True,False,False,False
+Gentle Repose,2,False,False,False,True,False,False,False
+Giant Insect,4,False,False,False,True,False,False,False
+Glibness,8,False,False,False,False,False,False,False
+Globe of Invulnerability,6,False,False,False,True,False,False,False
+Glyph of Warding,3,False,False,False,True,False,False,True
+Goodberry,1,False,False,False,False,False,False,False
+Grease,1,False,True,False,True,False,False,False
+Greater Invisibility,4,False,False,False,True,False,False,False
+Greater Restoration,5,False,False,False,True,False,False,False
+Guardian of Faith,4,False,True,False,True,False,False,False
+Guards and Wards,6,False,False,False,True,False,False,False
+Guidance,0,False,False,False,False,False,False,False
+Guiding Bolt,1,True,False,False,False,False,False,False
+Gust of Wind,2,False,True,False,False,True,False,False
+Hallow,5,False,False,False,True,True,False,False
+Hallucinatory Terrain,4,False,False,False,True,False,False,False
+Harm,6,False,True,False,True,False,False,False
+Haste,3,False,True,False,True,False,False,False
+Heal,6,False,False,False,True,False,False,False
+Healing Word,1,False,False,False,False,False,False,False
+Heat Metal,2,False,True,False,True,False,False,False
+Hellish Rebuke,1,False,True,False,True,False,False,False
+Heroes’ Feast,6,False,False,False,True,False,False,False
+Heroism,1,False,False,False,True,False,False,False
+Hex,1,False,False,False,True,False,False,False
+Hideous Laughter,1,False,True,False,True,False,False,False
+Hold Monster,5,False,True,False,True,False,False,False
+Hold Person,2,False,True,False,True,False,False,False
+Holy Aura,8,False,True,False,True,False,False,False
+Hunter’s Mark,1,False,False,False,True,False,False,False
+Hypnotic Pattern,3,False,True,False,True,False,False,False
+Ice Knife,1,True,True,False,False,False,False,False
+Ice Storm,4,False,True,False,False,True,False,False
+Identify,1,False,False,False,True,False,False,False
+Illusory Script,1,False,False,False,True,False,False,False
+Imprisonment,9,False,True,False,True,False,False,False
+Incendiary Cloud,8,False,True,False,True,True,False,False
+Inflict Wounds,1,False,True,False,False,False,False,False
+Insect Plague,5,False,True,False,True,True,False,False
+Instant Summons,6,False,False,False,True,False,False,False
+Irresistible Dance,6,False,True,False,True,False,False,False
+Invisibility,2,False,False,False,True,False,False,False
+Jump,1,False,False,False,False,False,False,False
+Knock,2,False,False,False,True,False,False,False
+Legend Lore,5,False,False,False,True,False,False,False
+Lesser Restoration,2,False,False,False,True,False,False,False
+Levitate,2,False,True,False,True,False,False,False
+Light,0,False,False,False,False,True,False,False
+Lightning Bolt,3,False,True,False,False,True,False,False
+Locate Animals or Plants,2,False,False,False,False,False,False,False
+Locate Creature,4,False,False,False,True,False,False,False
+Locate Object,2,False,False,False,True,False,False,False
+Longstrider,1,False,False,False,False,False,False,False
+Mage Armor,1,False,False,False,False,False,False,False
+Mage Hand,0,False,False,False,True,False,False,False
+Magic Circle,3,False,True,False,True,True,False,False
+Magic Jar,6,False,True,False,True,False,False,False
+Magic Missile,1,False,False,False,False,False,False,False
+Magic Mouth,2,False,False,False,True,False,False,False
+Magic Weapon,2,False,False,False,False,False,False,False
+Magnificent Mansion,7,False,False,False,True,False,False,False
+Major Image,3,False,False,False,True,False,False,False
+Mass Cure Wounds,5,False,False,False,False,True,False,False
+Mass Heal,9,False,False,False,True,False,False,False
+Mass Healing Word,3,False,False,False,False,False,False,False
+Mass Suggestion,6,False,True,False,True,False,False,False
+Maze,8,False,False,False,True,False,False,False
+Meld into Stone,3,False,False,False,True,False,False,False
+Mending,0,False,False,False,True,False,False,False
+Message,0,False,False,False,True,False,False,False
+Meteor Swarm,9,False,True,False,True,True,False,False
+Mind Blank,8,False,False,False,True,False,False,False
+Mind Spike,2,False,True,False,True,False,False,False
+Minor Illusion,0,False,False,False,True,False,False,False
+Mirage Arcane,7,False,False,False,True,False,False,False
+Mirror Image,2,False,False,False,True,False,False,False
+Mislead,5,False,False,False,True,False,False,False
+Misty Step,2,False,False,False,False,False,False,False
+Modify Memory,5,False,True,False,True,False,False,False
+Moonbeam,2,False,True,False,True,True,False,False
+Move Earth,6,False,False,False,True,False,False,False
+Nondetection,3,False,False,False,False,False,False,False
+Passwall,5,False,False,False,False,False,False,False
+Pass without Trace,2,False,False,False,False,False,False,False
+Phantasmal Force,2,False,True,False,True,False,True,False
+Phantasmal Killer,4,False,True,False,False,False,False,False
+Phantom Steed,3,False,False,False,True,False,False,False
+Planar Ally,6,False,False,False,True,False,False,False
+Planar Binding,5,False,True,False,True,False,False,False
+Plane Shift,7,False,False,False,True,False,False,False
+Plant Growth,3,False,False,False,True,False,False,False
+Poison Spray,0,True,False,False,False,False,False,False
+Polymorph,4,False,True,False,True,False,False,False
+Power Word Heal,9,False,False,False,True,False,False,False
+Power Word Kill,9,False,False,False,False,False,False,False
+Power Word Stun,8,False,True,False,True,False,False,False
+Prayer of Healing,2,False,False,False,True,False,False,False
+Prestidigitation,0,False,False,False,True,False,False,False
+Prismatic Spray,7,False,True,False,True,True,False,False
+Prismatic Wall,9,False,True,False,True,False,False,False
+Private Sanctum,4,False,False,False,True,False,False,False
+Produce Flame,0,True,False,False,False,True,False,False
+Programmed Illusion,6,False,False,False,True,False,False,False
+Project Image,7,False,False,False,True,False,False,False
+Protection from Energy,3,False,False,False,False,False,False,False
+Protection from Evil and Good,1,False,True,False,True,False,False,False
+Protection from Poison,2,False,True,False,True,False,False,False
+Purify Food and Drink,1,False,False,False,False,True,False,False
+Raise Dead,5,False,False,False,True,False,False,False
+Ray of Enfeeblement,2,False,True,False,False,False,False,False
+Ray of Frost,0,True,False,False,True,False,False,False
+Regenerate,7,False,False,False,False,False,False,False
+Ray of Sickness,1,True,False,False,True,False,False,False
+Reincarnate,5,False,False,False,False,False,False,False
+Remove Curse,3,False,False,False,True,False,False,False
+Resilient Sphere,4,False,True,False,True,False,False,False
+Resistance,0,False,False,False,True,False,False,False
+Resurrection,7,False,False,False,True,False,False,False
+Reverse Gravity,7,False,True,False,True,True,False,False
+Revivify,3,False,False,False,True,False,False,False
+Rope Trick,2,False,False,False,False,False,False,False
+Sacred Flame,0,False,True,False,True,False,False,False
+Sanctuary,1,False,True,False,True,False,False,False
+Scorching Ray,2,True,False,False,False,False,False,False
+Scrying,5,False,True,False,True,False,False,False
+Searing Smite,1,False,True,False,False,False,False,False
+Secret Chest,4,False,False,False,True,False,False,False
+See Invisibility,2,False,False,False,True,False,False,False
+Seeming,5,False,True,False,True,False,False,False
+Sending,3,False,False,False,True,False,False,False
+Sequester,7,False,False,False,True,False,False,False
+Shapechange,9,False,False,False,False,False,False,False
+Shatter,2,False,True,False,False,True,False,False
+Shield,1,False,False,False,False,False,False,False
+Shield of Faith,1,False,False,False,False,False,False,False
+Shillelagh,0,False,False,False,True,False,False,False
+Shining Smite,2,False,False,False,True,True,False,False
+Shocking Grasp,0,True,False,False,False,False,False,False
+Silence,2,False,False,False,True,True,False,False
+Silent Image,1,False,False,False,True,False,False,False
+Simulacrum,7,False,False,False,True,False,False,False
+Sleep,1,False,True,False,True,True,False,False
+Sleet Storm,3,False,True,False,True,True,False,True
+Slow,3,False,True,False,True,False,False,False
+Sorcerous Burst,0,True,False,False,True,False,False,False
+Spare the Dying,0,False,False,False,False,False,False,False
+Speak with Animals,1,False,False,False,False,False,False,False
+Speak with Dead,3,False,False,False,True,False,False,False
+Speak with Plants,3,False,False,False,True,False,False,False
+Spider Climb,2,False,False,False,False,False,False,False
+Spike Growth,2,False,False,False,True,True,False,False
+Spirit Guardians,3,False,True,False,True,False,False,False
+Spiritual Weapon,2,False,False,False,False,False,False,False
+Starry Wisp,0,True,False,False,True,True,False,False
+Stinking Cloud,3,False,True,False,True,True,False,False
+Stone Shape,4,False,False,False,True,False,False,False
+Stoneskin,4,False,False,False,False,False,False,False
+Storm of Vengeance,9,False,True,False,True,True,False,False
+Suggestion,2,False,True,False,True,False,False,False
+Summon Dragon,5,False,False,False,True,False,False,False
+Sunbeam,6,False,True,False,True,True,False,False
+Sunburst,8,False,True,False,True,True,False,False
+Symbol,7,False,False,False,True,True,False,False
+Telekinesis,5,False,True,False,True,False,False,False
+Telepathic Bond,5,False,False,False,True,False,False,False
+Teleport,7,False,False,False,True,False,False,False
+Teleportation Circle,5,False,False,False,True,True,False,False
+Thaumaturgy,0,False,False,False,True,False,False,False
+Thunderwave,1,False,True,False,True,False,False,False
+Time Stop,9,False,False,False,True,False,False,False
+Tiny Hut,3,False,False,False,True,False,False,False
+Tongues,3,False,False,False,True,False,False,False
+Transport via Plants,6,False,False,False,True,False,False,False
+Tree Stride,5,False,False,False,True,False,True,False
+True Polymorph,9,False,True,False,True,False,False,True
+True Resurrection,9,False,False,False,True,False,False,False
+True Seeing,6,False,False,False,False,False,False,False
+True Strike,0,False,False,False,False,False,False,False
+Tsunami,8,False,True,False,True,False,False,False
+Unseen Servant,1,False,False,False,True,False,True,False
+Vampiric Touch,3,True,False,False,False,False,True,False
+Vicious Mockery,0,False,True,False,False,False,False,False
+Vitriolic Sphere,4,False,True,True,False,True,False,False
+Wall of Fire,4,False,True,False,True,False,False,False
+Wall of Force,5,False,False,False,True,True,False,False
+Wall of Ice,6,False,True,False,True,True,False,False
+Wall of Stone,5,False,True,False,True,False,False,True
+Wall of Thorns,6,False,True,False,True,True,False,False
+Warding Bond,2,False,True,False,True,False,False,False
+Water Breathing,3,False,False,False,True,False,False,False
+Water Walk,3,False,False,False,True,False,False,False
+Web,2,False,True,False,True,False,False,False
+Weird,9,False,True,False,True,True,False,False
+Wind Walk,6,False,False,False,True,False,False,False
+Wind Wall,3,False,True,False,False,False,False,False
+Wish,9,False,False,False,True,False,False,False
+Word of Recall,6,False,False,False,True,False,False,False
+Zone of Truth,2,False,True,False,True,True,False,False
