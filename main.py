@@ -20,7 +20,9 @@ def cli():
     extended_spells = [s for s in extractor.spells]
 
     with open(args.outfile, "w", encoding="utf-8") as f:
-        json.dump(extended_spells, f, indent=2, ensure_ascii=False)
+
+        json.dump([asdict(s) for s in extended_spells], f, indent=2, ensure_ascii=False)
+
 
 if __name__ == "__main__":
     cli()

@@ -1,7 +1,11 @@
 import re
-from typing import List, Dict, Any, Optional, Literal, cast, Tuple
+from dataclasses import asdict
+from typing import List, Dict, Any, Optional, Literal, cast, Tuple, Set
 from .models.spells import Components, ComponentMaterial, CastingTime, ConditionEffect, EndCondition, Effect, Duration, \
     Requirements, SpellRange, Spell, Scaling, SaveInfo, Targeting, Resolution, DamageInstance, AreaShape, Subsection
+from .subparser.effect_parser import EffectParser
+from .subparser.section_parser import SectionParser
+from .subparser.targeting_parser import TargetingParser
 
 
 class SpellParser:
@@ -27,21 +31,23 @@ class SpellParser:
             self.spells.append(spell)
 
     def parse_single_spell(self, name: str, body: str) -> Spell:
+
+        print(name)
         lines: List[str] = body.strip().split("\n")
         meta_line: str = lines.pop(0)
         level: int
         school: str
         classes: List[str]
         level, school, classes = self._parse_metadata(meta_line)
-        sections: Dict[str, Any] = self._extract_sections("\n".join(lines))
+        sections: Dict[str, Any] = SectionParser("\n".join(lines)).parse()
 
-        description: str = sections.get("description", "").strip()
+        description: str = re.sub(r"\n(?=\w)", " ", sections.get("description", "").strip())
         casting_time: CastingTime = self._parse_casting_time(sections.get("Casting Time", ""))
         components: Components = self._parse_components(sections.get("Components", ""))
         spell_range: SpellRange = self._parse_spell_range(sections.get("Range", ""))
         duration: Duration = self._parse_duration(sections.get("Duration", ""))
-        effects: List[Effect] = self._parse_effects(description)
-        targeting: Targeting = self._parse_targeting(description)
+        effects: List[Effect] = EffectParser(description).parse()
+        targeting: Targeting = TargetingParser(description).parse()
         save: Optional[SaveInfo] = self._parse_save(description)
         scaling: Optional[Scaling] = self._parse_scaling(sections['scales_with'])
         requirements: Optional[Requirements] = self._parse_requirements(description)
@@ -74,50 +80,6 @@ class SpellParser:
         level: int = 0 if level_str == "Cantrip" else int(level_str.split(" ")[1])
         classes: List[str] = [c.strip() for c in classes_str.split(",")]
         return level, school, classes
-
-    @staticmethod
-    def _extract_sections(text: str) -> Dict[str, Any]:
-        sections: Dict[str, Any] = {"Casting Time": "", "Range": "", "Components": "", "Duration": "",
-                                    "description": "", "subsections": []}
-        known_fields: set[str] = {"Casting Time", "Range", "Components", "Duration"}
-        lines: List[str] = text.strip().splitlines()
-        current_field: str
-        current_sub: Optional[Subsection] = None
-
-        for line in lines:
-            stripped: str = line.strip()
-            match: Optional[re.Match] = re.match(r"\*\*(.+?)\*\*[:.] ?(.*)", stripped)
-            if match:
-                field_name: str = str(match.group(1).strip())
-                field_value: str = str(match.group(2).strip())
-                if field_name in known_fields:
-                    current_field = field_name
-                    sections[current_field] = field_value
-                    continue
-
-                if "Higher-Level Spell Slot" in field_name or "Cantrip Upgrade" in field_name:
-                    sections["scales_with"] = f"{field_name} {field_value}"
-                    continue
-
-                if current_sub:
-                    sections["subsections"].append(current_sub)
-
-                current_sub = Subsection(name=field_name, text=field_value)
-                continue
-
-            else:
-                if current_sub:
-                    current_sub.text += "\n" + line if current_sub.text else line
-                else:
-                    current_field = "description"
-
-            sections[current_field] += ("\n" + line if sections[current_field] else line)
-
-        if current_sub:
-            sections["subsections"].append(current_sub)
-
-
-        return sections
 
     @staticmethod
     def _parse_casting_time(text: str) -> CastingTime:
@@ -163,71 +125,6 @@ class SpellParser:
         return Duration(type="timed", max_duration=text.strip())
 
     @staticmethod
-    def _parse_targeting(text: str) -> Targeting:
-        lowered: str = text.lower().strip()
-        targeting_type: str = "creature"
-        filters: Optional[List[str]] = []
-        count: Optional[int] = None
-        shape: Literal["sphere", "cube", "line", "cone", "cylinder"] = "sphere"
-        size: Optional[int] = None  # für cube: edge length, sphere: diameter
-        length: Optional[int] = None  # für line, cone
-        width: Optional[int] = None  # für line
-        radius: Optional[int] = None  # für sphere, cylinder
-        height: Optional[int] = None  # für cylinder
-        angle: Optional[int] = None  # für cone
-        area: Optional[AreaShape] = None
-
-        shape_str: str
-
-        if "self" in lowered:
-            targeting_type = "self"
-        elif "touch" in lowered:
-            targeting_type = "touch"
-
-        filter_match: Optional[re.Match] = re.search(r"targets? (\w+)", lowered, re.IGNORECASE)
-        if filter_match:
-            filters = [str(filter_match.group(1))]
-
-        count_match: Optional[re.Match] = re.search(r"(\d+) (creature|target)", lowered, re.IGNORECASE)
-        if count_match:
-            count = int(count_match.group(1))
-
-        area_match: Optional[re.Match] = re.search(r"(\d+)-foot(?:-radius)? (sphere|cube|line|cone|cylinder)", lowered, re.IGNORECASE)
-        if area_match:
-            targeting_type = "area"
-            shape_str = str(area_match.group(2))
-
-            if shape_str == "sphere":
-                shape = "sphere"
-                radius = int(area_match.group(1))
-            elif shape_str == "cube":
-                shape = "cube"
-                size = int(area_match.group(1))
-            elif shape_str == "line":
-                shape = "line"
-                width = int(area_match.group(2))
-                length = int(area_match.group(3))
-            elif shape_str == "cone":
-                shape = "cone"
-                width = int(area_match.group(2))
-                angle = int(area_match.group(3))
-            elif shape_str == "cylinder":
-                shape = "cylinder"
-                height = int(area_match.group(2))
-                radius = int(area_match.group(3))
-
-            area = AreaShape(
-                shape=shape,
-                radius=radius,
-                size=size,
-                length=length,
-                width=width,
-                height=height,
-                angle=angle
-            )
-        return Targeting(type=targeting_type, filters=filters, count=count, selectable=True, area=area)
-
-    @staticmethod
     def _parse_resolution(text: str) -> Optional[Resolution]:
         lowered: str = text.lower().strip()
         if "saving throw" in lowered:
@@ -244,120 +141,6 @@ class SpellParser:
         if "make an attack roll" in lowered:
             return Resolution(type="attack_roll")
         return Resolution(type="automatic")
-
-    def _parse_effects(self, text: str) -> List[Effect]:
-        lowered: str = text.lower().strip()
-        effects: List[Effect] = []
-
-        trigger: Optional[Literal[
-            "on_hit", "on_miss",
-            "on_save_fail", "on_save_success",
-            "on_cast", "on_turn_start", "on_turn_end", "on_enter"
-        ]] = None
-
-        if re.search(r"\bmust succeed on\b", lowered, re.IGNORECASE):
-            trigger = "on_save_success"
-        elif re.search(r"\b(must make|makes|is forced to make)\b.*?saving throw", lowered, re.IGNORECASE):
-            trigger = "on_save_fail"
-        elif "as you hit" in lowered or "when you hit" in lowered:
-            trigger = "on_hit"
-        elif "when you cast" in lowered:
-            trigger = "on_cast"
-        elif "at the start of" in lowered:
-            trigger = "on_turn_start"
-        elif "enters the area" in lowered or "enters the emanation" in lowered:
-            trigger = "on_enter"
-
-        # Condition-Erkennung
-        condition_keywords: List[str] = [
-            "blinded", "charmed", "deafened", "frightened", "grappled", "incapacitated",
-            "paralyzed", "petrified", "poisoned", "restrained", "stunned", "unconscious",
-            "invisible", "prone", "exhaustion", "cursed"
-        ]
-
-        for keyword in condition_keywords:
-            if re.search(rf"\b{keyword}\b", lowered, re.IGNORECASE):
-                duration_type: Optional[str] = None
-                max_duration: Optional[str] = None
-                if "until the start of your next turn" in lowered:
-                    duration_type = "timed"
-                    max_duration = "start of next turn"
-                elif "for the duration" in lowered:
-                    duration_type = "timed"
-
-                effects.append(Effect(
-                    trigger=trigger,
-                    type="condition",
-                    condition=ConditionEffect(
-                        name=keyword,
-                        duration=Duration(type=duration_type, max_duration=max_duration),
-                        end_condition=None,
-                        stacking="replace"
-                    )
-                ))
-
-        # Damage-Erkennung
-        damage_pattern: str = "|".join(self.DAMAGE_TYPES)
-        damage_matches: List[tuple[str, str]] = re.findall(
-            rf"(\d+d\d+(?: \+ \d+)?)[^\n]*?\b({damage_pattern})\b",
-            lowered,
-            re.IGNORECASE
-        )
-        for dice, dmg_type in damage_matches:
-            effects.append(Effect(
-                trigger=trigger,
-                type="damage",
-                damage=[DamageInstance(type=dmg_type, dice=dice)]
-            ))
-
-        # --- on_hit damage ---
-        hit_matches: List[Tuple[str, str]] = re.findall(
-            rf"on a hit.*?(\d+d\d+).*?\b({damage_pattern})\b",
-            lowered,
-            re.IGNORECASE
-        )
-        for dice, dmg_type in hit_matches:
-            effects.append(Effect(
-                trigger="on_hit",
-                type="damage",
-                damage=[DamageInstance(type=dmg_type, dice=dice)]
-            ))
-
-        # --- on_turn_start (ongoing) ---
-        ongoing_matches: List[Tuple[str, str, str]] = re.findall(
-            rf"(\d+d\d+)\s+({damage_pattern}) damage at the (start|end) of",
-            lowered,
-            re.IGNORECASE
-        )
-        for dice_str, dmg_type_str, position_str in ongoing_matches:
-            trigger: Literal["on_turn_start", "on_turn_end"] = (
-                "on_turn_start" if position_str == "start" else "on_turn_end"
-            )
-            effects.append(Effect(
-                trigger=trigger,
-                type="damage",
-                damage=[DamageInstance(type=dmg_type_str, dice=dice_str)]
-            ))
-
-        # --- on_miss (modifier = half) ---
-        if re.search(r"on a miss.*?half", lowered, re.IGNORECASE):
-            effects.append(Effect(
-                trigger="on_miss",
-                type="damage",
-                copy_from="on_hit",
-                modifier="half"
-            ))
-
-        # --- on_successful_save (modifier = half) ---
-        if re.search(r"half.*?damage.*?successful", lowered, re.IGNORECASE):
-            effects.append(Effect(
-                trigger="on_save_success",
-                type="damage",
-                copy_from="on_save_fail",
-                modifier="half"
-            ))
-
-        return effects
 
     @staticmethod
     def _parse_save(text: str) -> Optional[SaveInfo]:
@@ -378,6 +161,7 @@ class SpellParser:
         lowered: str = text.lower()
         match: Optional[re.Match]
         mode: Literal["slot_level", "level_threshold"] = "level_threshold"
+        per_level: dict[str, str | List[dict[str, int | str]]]
 
         if "using a higher-level spell slot" in lowered:
             mode = "slot_level"
@@ -428,31 +212,43 @@ class SpellParser:
                 )
 
         elif "cantrip upgrade" in lowered:
-            match = re.search(
-                rf"(\b{damage_pattern}\b\s?)? (damage|range)? (?:increases by \d+d\d+|doubles)?\s?when you reach levels (\d+) \(([^)]+)\), (\d+) \(([^)]+)\), and (\d+) \(([^)]+)\)",
+            match = re.search(rf"(\b{damage_pattern}\b\s?)? (damage|range)? (?:increases by \d+d\d+|doubles)?\s?when you reach levels (\d+) \(([^)]+)\), (\d+) \(([^)]+)\), and (\d+) \(([^)]+)\)",
                 lowered)
-            values: List[dict[str, int | str]]
 
-            group_map = [
-                (int(match.group(3)), match.group(4)),
-                (int(match.group(5)), match.group(6)),
-                (int(match.group(7)), match.group(8)),
-            ]
-            if "damage" in (match.group(2) or ""):
-                values = [{"level": lvl, "dice": val} for lvl, val in group_map]
-            else:
-                values = [{"level": lvl, "mod": val} for lvl, val in group_map]
-            per_level: dict[str, str | List[dict[str, int | str]]] = {"effect": str(match.group(2)),
-                                                                      "damage_type": match.group(1) if match.group(
-                                                                          1) else "", "values": values}
+            values: List[dict[str, int | str]] = []
             if match:
+                group_map = [
+                    (int(match.group(3)), match.group(4)),
+                    (int(match.group(5)), match.group(6)),
+                    (int(match.group(7)), match.group(8)),
+                ]
+                if "damage" in (match.group(2) or ""):
+                    values = [{"level": lvl, "dice": val} for lvl, val in group_map]
+                else:
+                    values = [{"level": lvl, "mod": val} for lvl, val in group_map]
+                per_level = {"effect": str(match.group(2)),
+                                                                          "damage_type": match.group(1) if match.group(
+                                                                              1) else "", "values": values}
+
+            matches = re.findall(
+                rf"(two|three|four) beams at level (\d+)",
+                lowered)
+
+            if matches:
+                word_to_num = {"two": 2, "three": 3, "four": 4}
+                values = [{"level": int(lvl), "beams": word_to_num[word]} for word, lvl in matches]
+
+                per_level = {"effect": "beams", "values": values}
+
+            #The spell creates two beams at level 5, three beams at level 11, and four beams at level 17
+            if match or matches:
                 return Scaling(
                     mode=mode,
                     base_level=1,
                     per_level=per_level,
                     per_slot=None
                 )
-        return Scaling(mode=mode, base_level=1, per_level=None, per_slot=None)
+        return None
 
     @staticmethod
     def _parse_requirements(text: str) -> Requirements:
