@@ -2,6 +2,7 @@ import re
 from typing import Optional, List, Literal, cast
 
 from src.parser.models.spells import Targeting, AreaShape
+from src.parser.utils import word_to_number
 
 
 class TargetingParser:
@@ -37,7 +38,7 @@ class TargetingParser:
             self.text)
         if match:
             word = match.group(1)
-            count = int(word) if word.isdigit() else self._word_to_number(word)
+            count = int(word) if word.isdigit() else word_to_number(word)
 
         # "up to X creatures"
         match = re.search(r"up to (\d+) (willing )?(creature|target|humanoid|beast)s?", self.text)
@@ -87,11 +88,3 @@ class TargetingParser:
             count = None
 
         return Targeting(type=targeting_type, filters=filters or None, count=count, selectable=selectable, area=area)
-
-    @staticmethod
-    def _word_to_number(word: str) -> int:
-        table = {
-            "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
-            "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10
-        }
-        return table.get(word.lower(), 1)

@@ -3,15 +3,12 @@ from dataclasses import asdict
 from typing import List, Optional, Literal, Tuple
 
 from src.parser.models.spells import Effect, DamageInstance, Duration, ConditionEffect
+from src.parser.utils import DAMAGE_TYPES, CONDITIONS
 
 
 class EffectParser:
     def __init__(self, description: str):
         self.description: str = description
-        self.DAMAGE_TYPES: List[str] = [
-            "base", "initial", "acid", "fire", "cold", "lightning", "radiant", "necrotic",
-            "force", "thunder", "psychic", "poison", "bludgeoning", "piercing", "slashing"
-        ]
 
     def parse(self):
         lowered: str = self.description.lower().strip()
@@ -36,14 +33,8 @@ class EffectParser:
         elif "enters the area" in lowered or "enters the emanation" in lowered:
             trigger = "on_enter"
 
-        # Condition-Erkennung
-        condition_keywords: List[str] = [
-            "blinded", "charmed", "deafened", "frightened", "grappled", "incapacitated",
-            "paralyzed", "petrified", "poisoned", "restrained", "stunned", "unconscious",
-            "invisible", "prone", "exhaustion", "cursed"
-        ]
 
-        for keyword in condition_keywords:
+        for keyword in CONDITIONS:
             if re.search(rf"\b{keyword}\b", lowered, re.IGNORECASE):
                 duration_type: Optional[str] = None
                 max_duration: Optional[str] = None
@@ -65,7 +56,7 @@ class EffectParser:
                 ))
 
         # Damage-Erkennung
-        damage_pattern: str = "|".join(self.DAMAGE_TYPES)
+        damage_pattern: str = "|".join(DAMAGE_TYPES)
         damage_matches: List[tuple[str, str]] = re.findall(
             rf"(\d+d\d+(?: \+ \d+)?)[^\n]*?\b({damage_pattern})\b",
             lowered,
