@@ -1,0 +1,40 @@
+name: Shield
+level: 1
+school: Abjuration
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: reaction
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: timed
+    max_duration: 1 round
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: An imperceptible barrier of magical force protects you. Until the start
+    of your next turn, you have a +5 bonus to AC, including against the triggering
+    attack, and you take no damage from Magic Missile.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

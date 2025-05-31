@@ -1,0 +1,69 @@
+name: Bestow Curse
+level: 3
+school: Necromancy
+classes:
+- Bard
+- Cleric
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: cursed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You touch a creature, which must succeed on a Wisdom saving throw or
+    become cursed for the duration. Until the curse ends, the target suffers one of
+    the following effects of your choice: '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Choose one ability
+    text: The target has Disadvantage on ability checks and saving throws made with
+        that ability.  The target has Disadvantage on attack rolls against you.  In
+        combat, the target must succeed on a Wisdom saving throw at the start of each
+        of its turns or be forced to take the Dodge action on that turn.  If you deal
+        damage to the target with an attack roll or a spell, the target takes an extra
+        1d8 Necrotic damage.
+-   name: Using a Higher-Level Spell Slot
+    text: If you cast this spell using a level 4 spell slot, you can maintain Concentration
+        on it for up to 10 minutes. If you use a level 5+ spell slot, the spell doesn’t
+        require Concentration, and the duration becomes 8 hours (level 5–6 slot) or
+        24 hours (level 7–8 slot). If you use a level 9 spell slot, the spell lasts
+        until dispelled.
+tags: []

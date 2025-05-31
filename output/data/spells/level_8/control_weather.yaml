@@ -1,0 +1,62 @@
+name: Control Weather
+level: 8
+school: Transmutation
+classes:
+- Cleric
+- Druid
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: burning incense
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 8 hours
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: "You take control of the weather within 5 miles of you for the duration.\
+    \ You must be outdoors to cast this spell, and it ends early if you go indoors.\n\
+    \nWhen you cast the spell, you change the current weather conditions, which are\
+    \ determined by the GM. You can change precipitation, temperature, and wind. It\
+    \ takes 1d4 × 10 minutes for the new conditions to take effect. Once they do so,\
+    \ you can change the conditions again. When the spell ends, the weather gradually\
+    \ returns to normal. When you change the weather conditions, find a current condition\
+    \ on the following tables and change its stage by one, up or down. When changing\
+    \ the wind, you can change its direction.\n\n###### Precipitation\n\n| Stage |\
+    \ Condition                                   | |-------|---------------------------------------------|\
+    \ | 1     | \tClear                                      | | 2     | \tLight clouds\
+    \                               | | 3     | \tOvercast or ground fog         \
+    \            | | 4     | \tRain, hail, or snow                        | | 5  \
+    \   | \tTorrential rain, driving hail, or blizzard |\n\n###### Temperature\n\n\
+    | Stage | Condition  | |-------|------------| | 1     | \tHeat wave | | 2    \
+    \ | \tHot       | | 3     | \tWarm      | | 4     | \tCool      | | 5     | \t\
+    Cold      | | 6     | \tFreezing  |\n\n###### Wind\n\n| Stage | Condition    \
+    \  | |-------|----------------| | 1     | \tCalm          | | 2     | \tModerate\
+    \ wind | | 3     | \tStrong wind   | | 4     | \tGale          | | 5     | \t\
+    Storm         |"
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

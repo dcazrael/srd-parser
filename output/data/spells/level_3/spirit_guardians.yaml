@@ -1,0 +1,79 @@
+name: Spirit Guardians
+level: 3
+school: Conjuration
+classes:
+- Cleric
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a prayer scroll
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: radiant
+        dice: 3d8
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: necrotic
+        dice: 3d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Protective spirits flit around you in a 15-foot Emanation for the duration.
+    If you are good or neutral, their spectral form appears angelic or fey (your choice).
+    If you are evil, they appear fiendish.
+
+
+    When you cast this spell, you can designate creatures to be unaffected by it.
+    Any other creature’s Speed is halved in the Emanation, and whenever the Emanation
+    enters a creature’s space and whenever a creature enters the Emanation or ends
+    its turn there, the creature must make a Wisdom saving throw. On a failed save,
+    the creature takes 3d8 Radiant damage ( if you are good or neutral) or 3d8 Necrotic
+    damage (if you are evil). On a successful save, the creature takes half as much
+    damage. A creature makes this save only once per turn. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 3
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 3.
+tags: []

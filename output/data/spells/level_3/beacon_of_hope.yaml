@@ -1,0 +1,42 @@
+name: Beacon of Hope
+level: 3
+school: Abjuration
+classes:
+- Cleric
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: Choose any number of creatures within range. For the duration, each target
+    has Advantage on Wisdom saving throws and Death Saving Throws and regains the
+    maximum number of Hit Points possible from any healing.
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections: []
+tags: []

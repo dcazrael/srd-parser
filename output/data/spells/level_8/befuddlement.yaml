@@ -1,0 +1,65 @@
+name: Befuddlement
+level: 8
+school: Enchantment
+classes:
+- Bard
+- Druid
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a key ring with no keys
+        value_gp: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: psychic
+        dice: 10d12
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You blast the mind of a creature that you can see within range. The
+    target makes an Intelligence saving throw.
+
+
+    On a failed save, the target takes 10d12 Psychic damage and can’t cast spells
+    or take the Magic action. At the end of every 30 days, the target repeats the
+    save, ending the effect on a success. The effect can also be ended by the Greater
+    Restoration, Heal, or Wish spell.
+
+
+    On a successful save, the target takes half as much damage only.'
+save:
+    type: int
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: int
+subsections: []
+tags: []

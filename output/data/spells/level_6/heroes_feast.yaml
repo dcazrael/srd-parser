@@ -1,0 +1,76 @@
+name: Heroes’ Feast
+level: 6
+school: Conjuration
+classes:
+- Bard
+- Cleric
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a gem-encrusted bowl worth 1,000+ GP, which the spell consumes
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: frightened
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: poisoned
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You conjure a feast that appears on a surface in an unoccupied 10-foot
+    Cube next to you. The feast takes 1 hour to consume and disappears at the end
+    of that time, and the beneficial effects don’t set in until this hour is over.
+    Up to twelve creatures can partake of the feast.
+
+
+    A creature that partakes gains several benefits, which last for 24 hours. The
+    creature has Resistance to Poison damage, and it has Immunity to the Frightened
+    and Poisoned conditions. Its Hit Point maximum also increases by 2d10, and it
+    gains the same number of Hit Points.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

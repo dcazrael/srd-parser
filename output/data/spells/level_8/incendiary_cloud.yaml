@@ -1,0 +1,70 @@
+name: Incendiary Cloud
+level: 8
+school: Conjuration
+classes:
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: fire
+        dice: 10d8
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A swirling cloud of embers and smoke fills a 20-foot-radius Sphere centered
+    on a point within range. The cloud’s area is Heavily Obscured. It lasts for the
+    duration or until a strong wind (like that created by Gust of Wind) disperses
+    it.
+
+
+    When the cloud appears, each creature in it makes a Dexterity saving throw, taking
+    10d8 Fire damage on a failed save or half as much damage on a successful one.
+    A creature must also make this save when the Sphere moves into its space and when
+    it enters the Sphere or ends its turn there. A creature makes this save only once
+    per turn.
+
+
+    The cloud moves 10 feet away from you in a direction you choose at the start of
+    each of your turns.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

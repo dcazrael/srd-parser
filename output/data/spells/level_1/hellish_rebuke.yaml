@@ -1,0 +1,70 @@
+name: Hellish Rebuke
+level: 1
+school: Evocation
+classes:
+- Warlock
+casting_time:
+    type: reaction
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: self
+duration:
+    type: timed
+    max_duration: ''
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: fire
+        dice: 2d10
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'of yourself
+
+
+    **Range**: 60 feet **Components**: V, S **Duration**: Instantaneous
+
+
+    The creature that damaged you is momentarily surrounded by green flames. It makes
+    a Dexterity saving throw, taking 2d10 Fire damage on a failed save or half as
+    much damage on a successful one. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d10
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d10 for each spell slot level above 1.
+tags: []

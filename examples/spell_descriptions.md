@@ -16,8 +16,7 @@ A shimmering green arrow streaks toward a target within range and bursts in a sp
 against the target. On a hit, the target takes 4d4 Acid damage and 2d4 Acid damage at the end of its next turn. On a
 miss, the arrow splashes the target with acid for half as much of the initial damage only.
 
-**Using a Higher-Level Spell Slot**. The damage (both initial and later) increases by 1d4 for each spell slot level
-above 2.
+**Using a Higher-Level Spell Slot**. The damage (both initial and later) increases by 1d4 for each spell slot level above 2.
 
 #### Acid Splash
 
@@ -68,8 +67,7 @@ spell, you can designate creatures that won’t set off the alarm. You also choo
 
 **Audible Alarm**. The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.
 
-**Mental Alarm**. You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if
-you’re asleep.
+**Mental Alarm**. You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you’re asleep.
 
 #### Alter Self
 

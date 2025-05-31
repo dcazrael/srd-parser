@@ -1,0 +1,54 @@
+name: Dispel Evil and Good
+level: 5
+school: Abjuration
+classes:
+- Cleric
+- Paladin
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: powdered silver and iron
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'For the duration, Celestials, Elementals, Fey, Fiends, and Undead have
+    Disadvantage on attack rolls against you. You can end the spell early by using
+    either of the following special functions. '
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Break Enchantment
+    text: As a Magic action, you touch a creature that is possessed by or has the
+        Charmed or Frightened condition from one or more creatures of the types above.
+        The target is no longer possessed, Charmed, or Frightened by such creatures.
+-   name: Dismissal
+    text: As a Magic action, you target one creature you can see within 5 feet of
+        you that has one of the creature types above. The target must succeed on a
+        Charisma saving throw or be sent back to its home plane if it isn’t there
+        already. If they aren’t on their home plane, Undead are sent to the Shadowfell,
+        and Fey are sent to the Feywild.
+tags: []

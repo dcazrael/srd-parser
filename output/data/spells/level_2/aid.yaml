@@ -1,0 +1,54 @@
+name: Aid
+level: 2
+school: Abjuration
+classes:
+- Bard
+- Cleric
+- Druid
+- Paladin
+- Ranger
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a strip of white cloth
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 8 hours
+targeting:
+    type: creature
+    filters: null
+    count: 3
+    selectable: true
+    area: null
+effects: []
+description: 'Choose up to three creatures within range. Each target’s Hit Point maximum
+    and current Hit Points increase by 5 for the duration. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: hit_points
+        value: 5
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: Each target’s Hit Points increase by 5 for each spell slot level above 2.
+tags: []

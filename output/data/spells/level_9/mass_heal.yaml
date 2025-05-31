@@ -1,0 +1,76 @@
+name: Mass Heal
+level: 9
+school: Abjuration
+classes:
+- Cleric
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: blinded
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: deafened
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: poisoned
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: A flood of healing energy flows from you into creatures around you. You
+    restore up to 700 Hit Points, divided as you choose among any number of creatures
+    that you can see within range. Creatures healed by this spell also have the Blinded,
+    Deafened, and Poisoned conditions removed from them.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

@@ -1,11 +1,13 @@
 import pytest
 
-from parser.models.spells import Spell, DamageInstance, ConditionEffect
+from src.parser.models.spells import Spell
 from tests.test_utils import load_spell, formatted_spell_name
 
 def test_acid_arrow() -> None:
     spell_name: str = formatted_spell_name("Acid Arrow")
     spell: Spell = load_spell(f"{spell_name}.md")
+
+    print(spell)
 
     assert spell.name == "Acid Arrow"
     assert spell.level == 2
@@ -30,6 +32,8 @@ def test_acid_arrow() -> None:
     assert spell.targeting.type == "creature"
 
     # Effektprüfungen
+    assert len(spell.effects) == 3
+
     hit = next((e for e in spell.effects if e.trigger == "on_hit"), None)
     assert hit is not None
     assert hit.type == "damage"

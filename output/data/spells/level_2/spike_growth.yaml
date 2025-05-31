@@ -1,0 +1,59 @@
+name: Spike Growth
+level: 2
+school: Transmutation
+classes:
+- Druid
+- Ranger
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: seven thorns
+        value_gp: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: null
+    damage:
+    -   type: piercing
+        dice: 2d4
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'The ground in a 20-foot-radius Sphere centered on a point within range
+    sprouts hard spikes and thorns. The area becomes Difficult Terrain for the duration.
+    When a creature moves into or within the area, it takes 2d4 Piercing damage for
+    every 5 feet it travels.
+
+
+    The transformation of the ground is camouflaged to look natural. Any creature
+    that can’t see the area when the spell is cast must take a Search action and succeed
+    on a Wisdom (Perception or Survival) check against your spell save DC to recognize
+    the terrain as hazardous before entering it.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

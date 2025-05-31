@@ -1,0 +1,77 @@
+name: Insect Plague
+level: 5
+school: Conjuration
+classes:
+- Cleric
+- Druid
+- Sorcerer
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a locust
+        value_gp: null
+range:
+    type: point
+    distance: 300 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: piercing
+        dice: 4d10
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'Swarming locusts fill a 20-foot-radius Sphere centered on a point you
+    choose within range. The Sphere remains for the duration, and its area is Lightly
+    Obscured and Difficult Terrain.
+
+
+    When the swarm appears, each creature in it makes a Constitution saving throw,
+    taking 4d10 Piercing damage on a failed save or half as much damage on a successful
+    one. A creature also makes this save when it enters the spell’s area for the first
+    time on a turn or ends its turn there. A creature makes this save only once per
+    turn. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 5
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d10
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d10 for each spell slot level above 5.
+tags: []

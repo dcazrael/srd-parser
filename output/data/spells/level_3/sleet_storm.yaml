@@ -1,0 +1,71 @@
+name: Sleet Storm
+level: 3
+school: Conjuration
+classes:
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a miniature umbrella
+        value_gp: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: area
+    filters: null
+    count: null
+    selectable: true
+    area:
+        shape: cylinder
+        size: null
+        length: 20
+        width: null
+        radius: null
+        height: 40
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: prone
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Until the spell ends, sleet falls in a 40-foot-tall, 20-foot-radius
+    Cylinder centered on a point you choose within range. The area is Heavily Obscured,
+    and exposed flames in the area are doused.
+
+
+    Ground in the Cylinder is Difficult Terrain. When a creature enters the Cylinder
+    for the first time on a turn or starts its turn there, it must succeed on a Dexterity
+    saving throw or have the Prone condition and lose Concentration.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

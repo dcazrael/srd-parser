@@ -1,0 +1,75 @@
+name: Shatter
+level: 2
+school: Evocation
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a chip of mica
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: thunder
+        dice: 3d8
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A loud noise erupts from a point of your choice within range. Each creature
+    in a 10-foot-radius Sphere centered there makes a Constitution saving throw, taking
+    3d8 Thunder damage on a failed save or half as much damage on a successful one.
+    A Construct has Disadvantage on the save.
+
+
+    A nonmagical object that isn’t being worn or carried also takes the damage if
+    it’s in the spell’s area. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 2.
+tags: []

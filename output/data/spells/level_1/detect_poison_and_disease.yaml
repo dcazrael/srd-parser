@@ -1,0 +1,50 @@
+name: Detect Poison and Disease
+level: 1
+school: Divination
+classes:
+- Cleric
+- Druid
+- Paladin
+- Ranger
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a yew leaf
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'For the duration, you sense the location of poisons, poisonous or venomous
+    creatures, and magical contagions within 30 feet of yourself. You sense the kind
+    of poison, creature, or contagion in each case.
+
+
+    The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a
+    thin sheet of lead.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

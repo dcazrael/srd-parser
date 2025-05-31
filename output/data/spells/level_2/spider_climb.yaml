@@ -1,0 +1,54 @@
+name: Spider Climb
+level: 2
+school: Transmutation
+classes:
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a drop of bitumen and a spider
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: concentration
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'Until the spell ends, one willing creature you touch gains the ability
+    to move up, down, and across vertical surfaces and along ceilings, while leaving
+    its hands free. The target also gains a Climb Speed equal to its Speed. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: target
+        value: 1
+        target_type: creature
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: You can target one additional creature for each spell slot level above 2.
+tags: []

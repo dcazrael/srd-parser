@@ -1,0 +1,47 @@
+name: Arcane Lock
+level: 2
+school: Abjuration
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: gold dust worth 25+ GP, which the spell consumes
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: until dispelled
+    max_duration: null
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'You touch a closed door, window, gate, container, or hatch and magically
+    lock it for the duration. This lock can’t be unlocked by any nonmagical means.
+
+
+    You and any creatures you designate when you cast the spell can open and close
+    the object despite the lock. You can also set a password that, when spoken within
+    5 feet of the object, unlocks it for 1 minute.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

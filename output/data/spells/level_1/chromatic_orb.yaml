@@ -1,0 +1,61 @@
+name: Chromatic Orb
+level: 1
+school: Evocation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a diamond worth 50+ GP
+        value_gp: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You hurl an orb of energy at a target within range. Choose Acid, Cold,
+    Fire, Lightning, Poison, or Thunder for the type of orb you create, and then make
+    a ranged spell attack against the target. On a hit, the target takes 3d8 damage
+    of the chosen type.
+
+
+    If you roll the same number on two or more of the d8s, the orb leaps to a different
+    target of your choice within 30 feet of the target. Make an attack roll against
+    the new target, and make a new damage roll. The orb can’t leap again unless you
+    cast the spell with a level 2+ spell slot. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: attack_roll
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 1. The orb can
+        leap a maximum number of times equal to the level of the slot expended, and
+        a creature can be targeted only once by each casting of this spell.
+tags: []

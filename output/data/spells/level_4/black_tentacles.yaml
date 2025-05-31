@@ -1,0 +1,76 @@
+name: Black Tentacles
+level: 4
+school: Conjuration
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a tentacle
+        value_gp: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: restrained
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: bludgeoning
+        dice: 3d6
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Squirming, ebony tentacles fill a 20-foot square on ground that you
+    can see within range. For the duration, these tentacles turn the ground in that
+    area into Difficult Terrain.
+
+
+    Each creature in that area makes a Strength saving throw. On a failed save, it
+    takes 3d6 Bludgeoning damage, and it has the Restrained condition until the spell
+    ends. A creature also makes that save if it enters the area or ends it turn there.
+    A creature makes that save only once per turn.
+
+
+    A Restrained creature can take an action to make a Strength (Athletics) check
+    against your spell save DC, ending the condition on itself on a success.'
+save:
+    type: str
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: str
+subsections: []
+tags: []

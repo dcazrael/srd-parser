@@ -1,0 +1,65 @@
+name: Rope Trick
+level: 2
+school: Transmutation
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a segment of rope
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You touch a rope. One end of it hovers upward until the rope hangs perpendicular
+    to the ground or the rope reaches a ceiling. At the rope’s upper end, an Invisible
+    3-foot-by-5-foot portal opens to an extradimensional space that lasts until the
+    spell ends.
+
+
+    That space can be reached by climbing the rope, which can be pulled into or dropped
+    out of it.
+
+
+    The space can hold up to eight Medium or smaller creatures. Attacks, spells, and
+    other effects can’t pass into or out of the space, but creatures inside it can
+    see through the portal. Anything inside the space drops out when the spell ends.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

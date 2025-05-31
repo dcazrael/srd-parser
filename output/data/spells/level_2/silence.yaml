@@ -1,0 +1,55 @@
+name: Silence
+level: 2
+school: Illusion
+classes:
+- Bard
+- Cleric
+- Ranger
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: deafened
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: For the duration, no sound can be created within or pass through a 20-foot-radius
+    Sphere centered on a point you choose within range. Any creature or object entirely
+    inside the Sphere has Immunity to Thunder damage, and creatures have the Deafened
+    condition while entirely inside it. Casting a spell that includes a Verbal component
+    is impossible there.
+save: null
+scaling: null
+requirements:
+    breath_required: true
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

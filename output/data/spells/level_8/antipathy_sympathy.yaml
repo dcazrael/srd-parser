@@ -1,0 +1,67 @@
+name: Antipathy/Sympathy
+level: 8
+school: Enchantment
+classes:
+- Bard
+- Druid
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a mix of vinegar and honey
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 10 days
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'As you cast the spell, choose whether it creates antipathy or sympathy,
+    and target one creature or object that is Huge or smaller. Then specify a kind
+    of creature, such as red dragons, goblins, or vampires. A creature of the chosen
+    kind makes a Wisdom saving throw when it comes within 120 feet of the target.
+    Your choice of antipathy or sympathy determines what happens to a creature when
+    it fails that save: '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Antipathy
+    text: The creature has the Frightened condition. The Frightened creature must
+        use its movement on its turns to get as far away as possible from the target,
+        moving by the safest route.
+-   name: Sympathy
+    text: The creature has the Charmed condition. The Charmed creature must use its
+        movement on its turns to get as close as possible to the target, moving by
+        the safest route. If the creature is within 5 feet of the target, the creature
+        can’t willingly move away. If the target damages the Charmed creature, that
+        creature can make a Wisdom saving throw to end the effect, as described below.
+-   name: Ending the Effect
+    text: If the Frightened or Charmed creature ends its turn more than 120 feet away
+        from the target, the creature makes a Wisdom saving throw. On a successful
+        save, the creature is no longer affected by the target. A creature that successfully
+        saves against this effect is immune to it for 1 minute, after which it can
+        be affected again.
+tags: []

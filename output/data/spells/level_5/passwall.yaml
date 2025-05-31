@@ -1,0 +1,50 @@
+name: Passwall
+level: 5
+school: Transmutation
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a pinch of sesame seeds
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'A passage appears at a point that you can see on a wooden, plaster,
+    or stone surface (such as a wall, ceiling, or floor) within range and lasts for
+    the duration. You choose the opening’s dimensions: up to 5 feet wide, 8 feet tall,
+    and 20 feet deep. The passage creates no instability in a structure surrounding
+    it.
+
+
+    When the opening disappears, any creatures or objects still in the passage created
+    by the spell are safely ejected to an unoccupied space nearest to the surface
+    on which you cast the spell.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

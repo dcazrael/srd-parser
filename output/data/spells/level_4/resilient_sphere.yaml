@@ -1,0 +1,63 @@
+name: Resilient Sphere
+level: 4
+school: Abjuration
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a glass sphere
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'A shimmering sphere encloses a Large or smaller creature or object within
+    range. An unwilling creature must succeed on a Dexterity saving throw or be enclosed
+    for the duration.
+
+
+    Nothing — not physical objects, energy, or other spell effects — can pass through
+    the barrier, in or out, though a creature in the sphere can breathe there. The
+    sphere is immune to all damage, and a creature or object inside can’t be damaged
+    by attacks or effects originating from outside, nor can a creature inside the
+    sphere damage anything outside it.
+
+
+    The sphere is weightless and just large enough to contain the creature or object
+    inside. An enclosed creature can take an action to push against the sphere’s walls
+    and thus roll the sphere at up to half the creature’s Speed. Similarly, the globe
+    can be picked up and moved by other creatures.
+
+
+    A Disintegrate spell targeting the globe destroys it without harming anything
+    inside.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

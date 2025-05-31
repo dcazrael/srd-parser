@@ -1,0 +1,65 @@
+name: Haste
+level: 3
+school: Transmutation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a shaving of licorice root
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: incapacitated
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Choose a willing creature that you can see within range. Until the spell
+    ends, the target’s Speed is doubled, it gains a +2 bonus to Armor Class, it has
+    Advantage on Dexterity saving throws, and it gains an additional action on each
+    of its turns. That action can be used to take only the Attack (one attack only),
+    Dash, Disengage, Hide, or Utilize action.
+
+
+    When the spell ends, the target is Incapacitated and has a Speed of 0 until the
+    end of its next turn, as a wave of lethargy washes over it.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

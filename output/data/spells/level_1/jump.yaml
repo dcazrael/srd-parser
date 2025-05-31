@@ -1,0 +1,50 @@
+name: Jump
+level: 1
+school: Transmutation
+classes:
+- Druid
+- Ranger
+- Sorcerer
+- Wizard
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 1 minute
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'You touch a willing creature. Once on each of its turns until the spell
+    ends, that creature can jump up to 30 feet by spending 10 feet of movement. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: target
+        value: 1
+        target_type: creature
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: You can target one additional creature for each spell slot level above 1.
+tags: []

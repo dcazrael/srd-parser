@@ -1,0 +1,70 @@
+name: Fire Shield
+level: 4
+school: Evocation
+classes:
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a bit of phosphorus or a firefly
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: timed
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: null
+    damage:
+    -   type: fire
+        dice: 2d8
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: null
+    damage:
+    -   type: cold
+        dice: 2d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Wispy flames wreathe your body for the duration, shedding Bright Light
+    in a 10-foot radius and Dim Light for an additional 10 feet.
+
+
+    The flames provide you with a warm shield or a chill shield, as you choose. The
+    warm shield grants you Resistance to Cold damage, and the chill shield grants
+    you Resistance to Fire damage.
+
+
+    In addition, whenever a creature within 5 feet of you hits you with a melee attack
+    roll, the shield erupts with flame. The attacker takes 2d8 Fire damage from a
+    warm shield or 2d8 Cold damage from a chill shield.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

@@ -1,0 +1,61 @@
+name: Arcane Sword
+level: 7
+school: Evocation
+classes:
+- Bard
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a miniature sword worth 250+ GP
+        value_gp: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_hit
+    damage:
+    -   type: force
+        dice: 4d12
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You create a spectral sword that hovers within range. It lasts for the
+    duration.
+
+
+    When the sword appears, you make a melee spell attack against a target within
+    5 feet of the sword. On a hit, the target takes Force damage equal to 4d12 plus
+    your spellcasting ability modifier.
+
+
+    On your later turns, you can take a Bonus Action to move the sword up to 30 feet
+    to a spot you can see and repeat the attack against the same target or a different
+    one.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

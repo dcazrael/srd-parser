@@ -1,0 +1,77 @@
+name: Sequester
+level: 7
+school: Transmutation
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: gem dust worth 5,000+ GP, which the spell consumes
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: until dispelled
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: unconscious
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'With a touch, you magically sequester an object or a willing creature.
+    For the duration, the target has the Invisible condition and can’t be targeted
+    by Divination spells, detected by magic, or viewed remotely with magic.
+
+
+    If the target is a creature, it enters a state of suspended animation; it has
+    the Unconscious condition, doesn’t age, and doesn’t need food, water, or air.
+
+
+    You can set a condition for the spell to end early. The condition can be anything
+    you choose, but it must occur or be visible within 1 mile of the target. Examples
+    include “after 1,000 years” or “when the tarrasque awakens.” This spell also ends
+    if the target takes any damage.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

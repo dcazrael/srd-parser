@@ -1,0 +1,61 @@
+name: Power Word Stun
+level: 8
+school: Enchantment
+classes:
+- Bard
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: self
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: stunned
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You overwhelm the mind of one creature you can see within range. If
+    the target has 150 Hit Points or fewer, it has the Stunned condition. Otherwise,
+    its Speed is 0 until the start of your next turn.
+
+
+    The Stunned target makes a Constitution saving throw at the end of each of its
+    turns, ending the condition on itself on a success.'
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

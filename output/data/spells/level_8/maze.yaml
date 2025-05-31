@@ -1,0 +1,47 @@
+name: Maze
+level: 8
+school: Conjuration
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You banish a creature that you can see within range into a labyrinthine
+    demiplane. The target remains there for the duration or until it escapes the maze.
+
+
+    The target can take a Study action to try to escape. When it does so, it makes
+    a DC 20 Intelligence (Investigation) check. If it succeeds, it escapes, and the
+    spell ends.
+
+
+    When the spell ends, the target reappears in the space it left or, if that space
+    is occupied, in the nearest unoccupied space.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

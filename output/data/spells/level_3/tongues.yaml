@@ -1,0 +1,48 @@
+name: Tongues
+level: 3
+school: Divination
+classes:
+- Bard
+- Cleric
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material:
+        required: true
+        consumed: false
+        description: a miniature ziggurat
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: This spell grants the creature you touch the ability to understand any
+    spoken or signed language that it hears or sees. Moreover, when the target communicates
+    by speaking or signing, any creature that knows at least one language can understand
+    it if that creature can hear the speech or see the signing.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

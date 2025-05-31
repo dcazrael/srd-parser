@@ -1,0 +1,60 @@
+name: Arcane Eye
+level: 4
+school: Divination
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a bit of bat fur
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You create an Invisible, invulnerable eye within range that hovers for
+    the duration. You mentally receive visual information from the eye, which can
+    see in every direction. It also has Darkvision with a range of 30 feet.
+
+
+    As a Bonus Action, you can move the eye up to 30 feet in any direction. A solid
+    barrier blocks the eye’s movement, but the eye can pass through an opening as
+    small as 1 inch in diameter.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

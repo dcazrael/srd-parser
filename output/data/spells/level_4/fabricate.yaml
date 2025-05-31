@@ -1,0 +1,53 @@
+name: Fabricate
+level: 4
+school: Transmutation
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You convert raw materials into products of the same material. For example,
+    you can fabricate a wooden bridge from a clump of trees, a rope from a patch of
+    hemp, or clothes from flax or wool.
+
+
+    Choose raw materials that you can see within range. You can fabricate a Large
+    or smaller object (contained within a 10-foot Cube or eight connected 5-foot Cubes)
+    given a sufficient quantity of material. If you’re working with metal, stone,
+    or another mineral substance, however, the fabricated object can be no larger
+    than Medium (contained within a 5-foot Cube). The quality of any fabricated objects
+    is based on the quality of the raw materials.
+
+
+    Creatures and magic items can’t be created by this spell. You also can’t use it
+    to create items that require a high degree of skill — such as weapons and armor
+    — unless you have proficiency with the type of Artisan’s Tools used to craft such
+    objects.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

@@ -1,0 +1,57 @@
+name: Reverse Gravity
+level: 7
+school: Transmutation
+classes:
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a lodestone and iron filings
+        value_gp: null
+range:
+    type: point
+    distance: 100 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'This spell reverses gravity in a 50-foot-radius, 100foot high Cylinder
+    centered on a point within range. All creatures and objects in that area that
+    aren’t anchored to the ground fall upward and reach the top of the Cylinder. A
+    creature can make a Dexterity saving throw to grab a fixed object it can reach,
+    thus avoiding the fall upward.
+
+
+    If a ceiling or an anchored object is encountered in this upward fall, creatures
+    and objects strike it just as they would during a downward fall. If an affected
+    creature or object reaches the Cylinder’s top without striking anything, it hovers
+    there for the duration. When the spell ends, affected objects and creatures fall
+    downward.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

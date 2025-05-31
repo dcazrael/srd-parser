@@ -1,0 +1,92 @@
+name: Wall of Ice
+level: 6
+school: Evocation
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a piece of quartz
+        value_gp: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: cold
+        dice: 10d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: cold
+        dice: 5d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'You create a wall of ice on a solid surface within range. You can form
+    it into a hemispherical dome or a globe with a radius of up to 10 feet, or you
+    can shape a flat surface made up of ten 10-foot-square panels. Each panel must
+    be contiguous with another panel. In any form, the wall is 1 foot thick and lasts
+    for the duration.
+
+
+    If the wall cuts through a creature’s space when it appears, the creature is pushed
+    to one side of the wall (you choose which side) and makes a Dexterity saving throw,
+    taking 10d6 Cold damage on a failed save or half as much damage on a successful
+    one.
+
+
+    The wall is an object that can be damaged and thus breached. It has AC 12 and
+    30 Hit Points per 10-foot section, and it has Immunity to Cold, Poison, and Psychic
+    damage and Vulnerability to Fire damage. Reducing a 10-foot section of wall to
+    0 Hit Points destroys it and leaves behind a sheet of frigid air in the space
+    the wall occupied.
+
+
+    A creature moving through the sheet of frigid air for the first time on a turn
+    makes a Constitution saving throw, taking 5d6 Cold damage on a failed save or
+    half as much damage on a successful one. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage the wall deals when it appears increases by 2d6 and the damage
+        from passing through the sheet of frigid air increases by 1d6 for each spell
+        slot level above 6.
+tags: []

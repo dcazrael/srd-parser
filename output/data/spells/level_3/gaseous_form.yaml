@@ -1,0 +1,83 @@
+name: Gaseous Form
+level: 3
+school: Transmutation
+classes:
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a bit of gauze
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: concentration
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: prone
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'A willing creature you touch shape-shifts, along with everything it’s
+    wearing and carrying, into a misty cloud for the duration. The spell ends on the
+    target if it drops to 0 Hit Points or if it takes a Magic action to end the spell
+    on itself.
+
+
+    While in this form, the target’s only method of movement is a Fly Speed of 10
+    feet, and it can hover. The target can enter and occupy the space of another creature.
+    The target has Resistance to Bludgeoning, Piercing, and Slashing damage; it has
+    Immunity to the Prone condition; and it has Advantage on Strength, Dexterity,
+    and Constitution saving throws. The target can pass through narrow openings, but
+    it treats liquids as though they were solid surfaces.
+
+
+    The target can’t talk or manipulate objects, and any objects it was carrying or
+    holding can’t be dropped, used, or otherwise interacted with. Finally, the target
+    can’t attack or cast spells. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 3
+    per_level: null
+    per_slot:
+        effect: target
+        value: 1
+        target_type: creature
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: You can target one additional creature for each spell slot level above 3.
+tags: []

@@ -1,0 +1,53 @@
+name: Daylight
+level: 3
+school: Evocation
+classes:
+- Cleric
+- Druid
+- Paladin
+- Ranger
+- Sorcerer
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'For the duration, sunlight spreads from a point within range and fills
+    a 60-foot-radius Sphere. The sunlight’s area is Bright Light and sheds Dim Light
+    for an additional 60 feet.
+
+
+    Alternatively, you cast the spell on an object that isn’t being worn or carried,
+    causing the sunlight to fill a 60-foot Emanation originating from that object.
+    Covering that object with something opaque, such as a bowl or helm, blocks the
+    sunlight.
+
+
+    If any of this spell’s area overlaps with an area of Darkness created by a spell
+    of level 3 or lower, that other spell is dispelled.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

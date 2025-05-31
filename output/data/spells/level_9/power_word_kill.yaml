@@ -1,0 +1,49 @@
+name: Power Word Kill
+level: 9
+school: Enchantment
+classes:
+- Bard
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: null
+    damage:
+    -   type: psychic
+        dice: 12d12
+    condition: null
+    copy_from: null
+    modifier: null
+description: You compel one creature you can see within range to die. If the target
+    has 100 Hit Points or fewer, it dies. Otherwise, it takes 12d12 Psychic damage.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

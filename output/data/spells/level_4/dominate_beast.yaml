@@ -1,0 +1,72 @@
+name: Dominate Beast
+level: 4
+school: Enchantment
+classes:
+- Druid
+- Ranger
+- Sorcerer
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: self
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'One Beast you can see within range must succeed on a Wisdom saving throw
+    or have the Charmed condition for the duration. The target has Advantage on the
+    save if you or your allies are fighting it. Whenever the target takes damage,
+    it repeats the save, ending the spell on itself on a success.
+
+
+    You have a telepathic link with the Charmed target while the two of you are on
+    the same plane of existence. On your turn, you can use this link to issue commands
+    to the target (no action required), such as “Attack that creature,” “Move over
+    there,” or “Fetch that object.” The target does its best to obey on its turn.
+    If it completes an order and doesn’t receive further direction from you, it acts
+    and moves as it likes, focusing on protecting itself.
+
+
+    You can command the target to take a Reaction but must take your own Reaction
+    to do so. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: Your Concentration can last longer with a spell slot of level 5 (up to 10
+        minutes), 6 (up to 1 hour), or 7+ (up to 8 hours).
+tags: []

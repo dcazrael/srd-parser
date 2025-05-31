@@ -1,0 +1,57 @@
+name: Floating Disk
+level: 1
+school: Conjuration
+classes:
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a drop of mercury
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'This spell creates a circular, horizontal plane of force, 3 feet in
+    diameter and 1 inch thick, that floats 3 feet above the ground in an unoccupied
+    space of your choice that you can see within range. The disk remains for the duration
+    and can hold up to 500 pounds. If more weight is placed on it, the spell ends,
+    and everything on the disk falls to the ground.
+
+
+    The disk is immobile while you are within 20 feet of it. If you move more than
+    20 feet away from it, the disk follows you so that it remains within 20 feet of
+    you. It can move across uneven terrain, up or down stairs, slopes and the like,
+    but it can’t cross an elevation change of 10 feet or more. For example, the disk
+    can’t move across a 10-foot-deep pit, nor could it leave such a pit if it was
+    created at the bottom.
+
+
+    If you move more than 100 feet from the disk (typically because it can’t move
+    around an obstacle to follow you), the spell ends.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

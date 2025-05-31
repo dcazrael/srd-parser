@@ -1,0 +1,76 @@
+name: Conjure Fey
+level: 6
+school: Conjuration
+classes:
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_hit
+    damage: null
+    condition:
+        name: frightened
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_hit
+    damage:
+    -   type: psychic
+        dice: 3d12
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You conjure a Medium spirit from the Feywild in an unoccupied space
+    you can see within range. The spirit lasts for the duration, and it looks like
+    a Fey creature of your choice. When the spirit appears, you can make one melee
+    spell attack against a creature within 5 feet of it. On a hit, the target takes
+    Psychic damage equal to 3d12 plus your spellcasting ability modifier, and the
+    target has the Frightened condition until the start of your next turn, with both
+    you and the spirit as the source of the fear.
+
+
+    As a Bonus Action on your later turns, you can teleport the spirit to an unoccupied
+    space you can see within 30 feet of the space it left and make the attack against
+    a creature within 5 feet of it. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 6
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d12
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d12 for each spell slot level above 6.
+tags: []

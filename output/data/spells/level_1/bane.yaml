@@ -1,0 +1,58 @@
+name: Bane
+level: 1
+school: Enchantment
+classes:
+- Bard
+- Cleric
+- Warlock
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a drop of blood
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: 3
+    selectable: true
+    area: null
+effects: []
+description: 'Up to three creatures of your choice that you can see within range must
+    each make a Charisma saving throw. Whenever a target that fails this save makes
+    an attack roll or a saving throw before the spell ends, the target must subtract
+    1d4 from the attack roll or save. '
+save:
+    type: cha
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: target
+        value: 1
+        target_type: creature
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: cha
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: You can target one additional creature for each spell slot level above 1.
+tags: []

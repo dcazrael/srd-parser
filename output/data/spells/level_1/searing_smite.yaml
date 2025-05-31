@@ -1,0 +1,67 @@
+name: Searing Smite
+level: 1
+school: Evocation
+classes:
+- Paladin
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: self
+duration:
+    type: timed
+    max_duration: ''
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: fire
+        dice: 1d6
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Strike
+
+
+    **Range**: Self Component: V **Duration**: 1 minute
+
+
+    As you hit the target, it takes an extra 1d6 Fire damage from the attack. At the
+    start of each of its turns until the spell ends, the target takes 1d6 Fire damage
+    and then makes a Constitution saving throw.
+
+
+    On a failed save, the spell continues. On a successful save, the spell ends. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d6
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: All the damage increases by 1d6 for each spell slot level above 1.
+tags: []

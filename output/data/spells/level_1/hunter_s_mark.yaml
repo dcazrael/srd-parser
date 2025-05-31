@@ -1,0 +1,55 @@
+name: Hunter’s Mark
+level: 1
+school: Divination
+classes:
+- Ranger
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: concentration
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: null
+    damage:
+    -   type: force
+        dice: 1d6
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You magically mark one creature you can see within range as your quarry.
+    Until the spell ends, you deal an extra 1d6 Force damage to the target whenever
+    you hit it with an attack roll. You also have Advantage on any Wisdom (Perception
+    or Survival) check you make to find it.
+
+
+    If the target drops to 0 Hit Points before this spell ends, you can take a Bonus
+    Action to move the mark to a new creature you can see within range. '
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: Your Concentration can last longer with a spell slot of level 3–4 (up to
+        8 hours) or 5+ (up to 24 hours).
+tags: []

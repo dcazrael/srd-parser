@@ -1,0 +1,176 @@
+name: Prismatic Wall
+level: 9
+school: Abjuration
+classes:
+- Bard
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: blinded
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: petrified
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: restrained
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: fire
+        dice: 12d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: acid
+        dice: 12d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: lightning
+        dice: 12d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: poison
+        dice: 12d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: cold
+        dice: 12d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A shimmering, multicolored plane of light forms a vertical opaque wall
+    — up to 90 feet long, 30 feet high, and 1 inch thick — centered on a point within
+    range. Alternatively, you shape the wall into a globe up to 30 feet in diameter
+    centered on a point within range. The wall lasts for the duration. If you position
+    the wall in a space occupied by a creature, the spell ends instantly without effect.
+
+
+    The wall sheds Bright Light within 100 feet and Dim Light for an additional 100
+    feet. You and creatures you designate when you cast the spell can pass through
+    and be near the wall without harm. If another creature that can see the wall moves
+    within 20 feet of it or starts its turn there, the creature must succeed on a
+    Constitution saving throw or have the Blinded condition for 1 minute.
+
+
+    The wall consists of seven layers, each with a different color. When a creature
+    reaches into or passes through the wall, it does so one layer at a time through
+    all the layers. Each layer forces the creature to make a Dexterity saving throw
+    or be affected by that layer’s properties as described in the Prismatic Layers
+    table.
+
+
+    The wall, which has AC 10, can be destroyed one layer at a time, in order from
+    red to violet, by means specific to each layer. If a layer is destroyed, it is
+    gone for the duration. Antimagic Field has no effect on the wall, and Dispel Magic
+    can affect only the violet layer.
+
+
+    ###### Prismatic Layers
+
+
+    | Order | Ray    | Effect                                                                                                                        |
+    Additional Effects                                                                       |
+    |-------|--------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+    | 1     | Red    | Failed Save: 12d6 Fire damage. Successful Save: Half as much
+    damage.                                                          | Nonmagical
+    ranged attacks can’t pass through. Destroyed by ≥25 Cold damage.              |
+    | 2     | Orange | Failed Save: 12d6 Acid damage. Successful Save: Half as much
+    damage.                                                          | Magical ranged
+    attacks can’t pass through. Destroyed by strong wind (e.g. Gust of Wind). | |
+    3     | Yellow | Failed Save: 12d6 Lightning damage. Successful Save: Half as
+    much damage.                                                     | Destroyed by
+    ≥60 Force damage.                                                           |
+    | 4     | Green  | Failed Save: 12d6 Poison damage. Successful Save: Half as much
+    damage.                                                        | Destroyed by
+    Passwall or similar portal spell of equal or higher level.                  |
+    | 5     | Blue   | Failed Save: 12d6 Cold damage. Successful Save: Half as much
+    damage.                                                          | Destroyed by
+    ≥25 Fire damage.                                                            |
+    | 6     | Indigo | Failed Save: Target is Restrained. CON save at end of turns.
+    3 successes end it. 3 failures → Petrified (until freed).        | Spells can’t
+    be cast through. Destroyed by Bright Light (e.g. Daylight spell).           |
+    | 7     | Violet | Failed Save: Target is Blinded. At start of your next turn,
+    WIS save: on fail, also teleports to another plane (GM''s choice). | Destroyed
+    by Dispel Magic.                                                               |'
+save:
+    type: con
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

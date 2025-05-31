@@ -95,13 +95,12 @@ class Resolution:
 # --- Zielmechanik und Filter ---
 @dataclass
 class AreaShape:
-    shape: Literal["sphere", "cube", "line", "cone", "cylinder"]
+    shape: Literal["sphere", "cube", "line", "cone", "cylinder", "circle"]
     size: Optional[int] = None  # für cube: edge length, sphere: diameter oder radius
     length: Optional[int] = None  # für line, cone
     width: Optional[int] = None  # für line
-    radius: Optional[int] = None  # für sphere, cylinder
+    radius: Optional[int] = None  # für sphere, cylinder, circle
     height: Optional[int] = None  # für cylinder
-    angle: Optional[int] = None  # für cone
 
 @dataclass
 class Targeting:

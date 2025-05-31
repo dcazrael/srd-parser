@@ -1,0 +1,46 @@
+name: Divine Favor
+level: 1
+school: Transmutation
+classes:
+- Paladin
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: timed
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_hit
+    damage:
+    -   type: radiant
+        dice: 1d4
+    condition: null
+    copy_from: null
+    modifier: null
+description: Until the spell ends, your attacks with weapons deal an extra 1d4 Radiant
+    damage on a hit.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

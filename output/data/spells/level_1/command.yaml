@@ -1,0 +1,58 @@
+name: Command
+level: 1
+school: Enchantment
+classes:
+- Bard
+- Cleric
+- Paladin
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You speak a one-word command to a creature you can see within range.
+    The target must succeed on a Wisdom saving throw or follow the command on its
+    next turn. Choose the command from these options: '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Approach
+    text: The target moves toward you by the shortest and most direct route, ending
+        its turn if it moves within 5 feet of you.
+-   name: Drop
+    text: The target drops whatever it is holding and then ends its turn.
+-   name: Flee
+    text: The target spends its turn moving away from you by the fastest available
+        means.
+-   name: Grovel
+    text: The target has the Prone condition and then ends its turn.
+-   name: Halt
+    text: On its turn, the target doesn’t move and takes no action or Bonus Action.
+-   name: Using a Higher-Level Spell Slot
+    text: You can affect one additional creature for each spell slot level above 1.
+tags: []

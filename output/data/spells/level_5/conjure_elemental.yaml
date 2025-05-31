@@ -1,0 +1,78 @@
+name: Conjure Elemental
+level: 5
+school: Conjuration
+classes:
+- Druid
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_turn_start
+    damage: null
+    condition:
+        name: restrained
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You conjure a Large, intangible spirit from the Elemental Planes that
+    appears in an unoccupied space within range. Choose the spirit’s element, which
+    determines its damage type: air (Lightning), earth (Thunder), fire (Fire), or
+    water ( Cold). The spirit lasts for the duration.
+
+
+    Whenever a creature you can see enters the spirit’s space or starts its turn within
+    5 feet of the spirit, you can force that creature to make a Dexterity saving throw
+    if the spirit has no creature Restrained.
+
+
+    On failed save, the target takes 8d8 damage of the spirit’s type, and the target
+    has the Restrained condition until the spell ends. At the start of each of its
+    turns, the Restrained target repeats the save.
+
+
+    On a failed save, the target takes 4d8 damage of the spirit’s type. On a successful
+    save, the target isn’t Restrained by the spirit. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 5
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 5.
+tags: []

@@ -1,0 +1,85 @@
+name: Flesh to Stone
+level: 6
+school: Transmutation
+classes:
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a cockatrice feather
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: petrified
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: restrained
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You attempt to turn one creature that you can see within range into
+    stone. The target makes a Constitution saving throw. On a failed save, it has
+    the Restrained condition for the duration. On a successful save, its Speed is
+    0 until the start of your next turn. Constructs automatically succeed on the save.
+
+
+    A Restrained target makes another Constitution saving throw at the end of each
+    of its turns. If it successfully saves against this spell three times, the spell
+    ends. If it fails its saves three times, it is turned to stone and has the Petrified
+    condition for the duration. The successes and failures needn’t be consecutive;
+    keep track of both until the target collects three of a kind.
+
+
+    If you maintain your Concentration on this spell for the entire possible duration,
+    the target is Petrified until the condition is ended by Greater Restoration or
+    similar magic.'
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

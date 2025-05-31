@@ -1,0 +1,67 @@
+name: Planar Binding
+level: 5
+school: Abjuration
+classes:
+- Bard
+- Cleric
+- Druid
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a jewel worth 1,000+ GP, which the spell consumes
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 24 hours
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You attempt to bind a Celestial, an Elemental, a Fey, or a Fiend to
+    your service. The creature must be within range for the entire casting of the
+    spell. (Typically, the creature is first summoned into the center of the inverted
+    version of the Magic Circle spell to trap it while this spell is cast.) At the
+    completion of the casting, the target must succeed on a Charisma saving throw
+    or be bound to serve you for the duration. If the creature was summoned or created
+    by another spell, that spell’s duration is extended to match the duration of this
+    spell.
+
+
+    A bound creature must follow your commands to the best of its ability. You might
+    command the creature to accompany you on an adventure, to guard a location, or
+    to deliver a message. If the creature is Hostile, it strives to twist your commands
+    to achieve its own objectives. If the creature carries out your commands completely
+    before the spell ends, it travels to you to report this fact if you are on the
+    same plane of existence. If you are on a different plane, it returns to the place
+    where you bound it and remains there until the spell ends. '
+save:
+    type: cha
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: cha
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The duration increases with a spell slot of level 6 (10 days), 7 (30 days),
+        8 (180 days), and 9 (366 days).
+tags: []
