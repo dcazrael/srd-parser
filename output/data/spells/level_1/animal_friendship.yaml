@@ -1,0 +1,70 @@
+name: Animal Friendship
+level: 1
+school: Enchantment
+classes:
+- Bard
+- Druid
+- Ranger
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a morsel of food
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 24 hours
+targeting:
+    type: creature
+    filters:
+    - you can see
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Target a Beast that you can see within range. The target must succeed
+    on a Wisdom saving throw or have the Charmed condition for the duration. If you
+    or one of your allies deals damage to the target, the spells ends. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: target
+        value: 1
+        target_type: beast
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: You can target one additional Beast for each spell slot level above 1.
+tags: []

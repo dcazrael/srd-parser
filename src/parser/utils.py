@@ -1,3 +1,4 @@
+import re
 from typing import List
 
 DAMAGE_TYPES: List[str] = [
@@ -20,3 +21,6 @@ def word_to_number(word: str) -> int:
         "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10
     }
     return table.get(word.lower(), 1)
+
+def slugify(text: str) -> str:
+    return re.sub(r"[^\w]+", "_", text.lower()).strip("_")

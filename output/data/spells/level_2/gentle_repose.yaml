@@ -1,0 +1,49 @@
+name: Gentle Repose
+level: 2
+school: Necromancy
+classes:
+- Cleric
+- Paladin
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: 2 Copper Pieces, which the spell consumes
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 10 days
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'You touch a corpse or other remains. For the duration, the target is
+    protected from decay and can’t become Undead.
+
+
+    The spell also effectively extends the time limit on raising the target from the
+    dead, since days spent under the influence of this spell don’t count against the
+    time limit of spells such as Raise Dead.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

@@ -1,0 +1,64 @@
+name: Blade Barrier
+level: 6
+school: Evocation
+classes:
+- Cleric
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: force
+        dice: 6d10
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'You create a wall of whirling blades made of magical energy. The wall
+    appears within range and lasts for the duration. You make a straight wall up to
+    100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet
+    in diameter, 20 feet high, and 5 feet thick. The wall provides Three-Quarters
+    Cover, and its space is Difficult Terrain.
+
+
+    Any creature in the wall’s space makes a Dexterity saving throw, taking 6d10 Force
+    damage on a failed save or half as much damage on a successful one. A creature
+    also makes that save if it enters the wall’s space or ends it turn there. A creature
+    makes that save only once per turn.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

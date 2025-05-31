@@ -1,0 +1,40 @@
+name: Barkskin
+level: 2
+school: Transmutation
+classes:
+- Druid
+- Ranger
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: You touch a willing creature. Until the spell ends, the target’s skin
+    assumes a bark-like appearance, and the target has an Armor Class of 17 if its
+    AC is lower than that.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

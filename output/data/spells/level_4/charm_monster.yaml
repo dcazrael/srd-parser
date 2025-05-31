@@ -1,0 +1,69 @@
+name: Charm Monster
+level: 4
+school: Enchantment
+classes:
+- Bard
+- Druid
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'One creature you can see within range makes a Wisdom saving throw. It
+    does so with Advantage if you or your allies are fighting it. On a failed save,
+    the target has the Charmed condition until the spell ends or until you or your
+    allies damage it. The Charmed creature is Friendly to you. When the spell ends,
+    the target knows it was Charmed by you. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 4
+    per_level: null
+    per_slot:
+        effect: target
+        value: 1
+        target_type: creature
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: You can target one additional creature for each spell slot level above 4.
+tags: []

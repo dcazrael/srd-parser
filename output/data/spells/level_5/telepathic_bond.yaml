@@ -1,0 +1,50 @@
+name: Telepathic Bond
+level: 5
+school: Divination
+classes:
+- Bard
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: two eggs
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You forge a telepathic link among up to eight willing creatures of your
+    choice within range, psychically linking each creature to all the others for the
+    duration. Creatures that can’t communicate in any languages aren’t affected by
+    this spell.
+
+
+    Until the spell ends, the targets can communicate telepathically through the bond
+    whether or not they share a language. The communication is possible over any distance,
+    though it can’t extend to other planes of existence.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

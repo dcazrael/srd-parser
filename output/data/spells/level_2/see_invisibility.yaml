@@ -1,0 +1,57 @@
+name: See Invisibility
+level: 2
+school: Divination
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a pinch of talc
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: For the duration, you see creatures and objects that have the Invisible
+    condition as if they were visible, and you can see into the Ethereal Plane. Creatures
+    and objects there appear ghostly.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

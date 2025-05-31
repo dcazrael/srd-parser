@@ -1,0 +1,63 @@
+name: Dragon’s Breath
+level: 2
+school: Transmutation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a hot pepper
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'You touch one willing creature, and choose Acid, Cold, Fire, Lightning,
+    or Poison. Until the spell ends, the target can take a Magic action to exhale
+    a 15-foot Cone. Each creature in that area makes a Dexterity saving throw, taking
+    3d6 damage of the chosen type on a failed save or half as much damage on a successful
+    one. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d6
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d6 for each spell slot level above 2.
+tags: []

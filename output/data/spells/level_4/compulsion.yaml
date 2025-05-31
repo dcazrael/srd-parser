@@ -1,0 +1,59 @@
+name: Compulsion
+level: 4
+school: Enchantment
+classes:
+- Bard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Each creature of your choice that you can see within range must succeed
+    on a Wisdom saving throw or have the Charmed condition until the spell ends.
+
+
+    For the duration, you can take a Bonus Action to designate a direction that is
+    horizontal to you. Each Charmed target must use as much of its movement as possible
+    to move in that direction on its next turn, taking the safest route. After moving
+    in this way, a target repeats the save, ending the spell on itself on a success.'
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections: []
+tags: []

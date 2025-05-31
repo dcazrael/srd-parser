@@ -1,0 +1,63 @@
+name: Fire Storm
+level: 7
+school: Evocation
+classes:
+- Cleric
+- Druid
+- Sorcerer
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: fire
+        dice: 7d10
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A storm of fire appears within range. The area of the storm consists
+    of up to ten 10-foot Cubes, which you arrange as you like. Each Cube must be contiguous
+    with at least one other Cube. Each creature in the area makes a Dexterity saving
+    throw, taking 7d10 Fire damage on a failed save or half as much damage on a successful
+    one.
+
+
+    Flammable objects in the area that aren’t being worn or carried start burning.'
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections: []
+tags: []

@@ -1,0 +1,75 @@
+name: Contact Other Plane
+level: 5
+school: Divination
+classes:
+- Warlock
+- Wizard
+casting_time:
+    type:
+    - minute
+    - ritual
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: timed
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_cast
+    damage: null
+    condition:
+        name: incapacitated
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_cast
+    damage:
+    -   type: psychic
+        dice: 6d6
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You mentally contact a demigod, the spirit of a long dead sage, or some
+    other knowledgeable entity from another plane. Contacting this otherworldly intelligence
+    can break your mind. When you cast this spell, make a DC 15 Intelligence saving
+    throw. On a successful save, you can ask the entity up to five questions. You
+    must ask your questions before the spell ends. The GM answers each question with
+    one word, such as “yes,” “no,” “maybe,” “never,” “irrelevant,” or “unclear” (if
+    the entity doesn’t know the answer to the question). If a one-word answer would
+    be misleading, the GM might instead offer a short phrase as an answer.
+
+
+    On a failed save, you take 6d6 Psychic damage and have the Incapacitated condition
+    until you finish a Long Rest. A Greater Restoration spell cast on you ends this
+    effect.'
+save:
+    type: int
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: int
+subsections: []
+tags: []

@@ -1,0 +1,75 @@
+name: Fireball
+level: 3
+school: Evocation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a ball of bat guano and sulfur
+        value_gp: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: fire
+        dice: 8d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A bright streak flashes from you to a point you choose within range
+    and then blossoms with a low roar into a fiery explosion. Each creature in a
+
+
+    20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking
+    8d6 Fire damage on a failed save or half as much damage on a successful one.
+
+
+    Flammable objects in the area that aren’t being worn or carried start burning. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 3
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d6
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d6 for each spell slot level above 3.
+tags: []

@@ -1,0 +1,69 @@
+name: Chain Lightning
+level: 6
+school: Evocation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: three silver pins
+        value_gp: null
+range:
+    type: point
+    distance: 150 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: lightning
+        dice: 10d8
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'You launch a lightning bolt toward a target you can see within range.
+    Three bolts then leap from that target to as many as three other targets of your
+    choice, each of which must be within 30 feet of the first target. A target can
+    be a creature or an object and can be targeted by only one of the bolts.
+
+
+    Each target makes a Dexterity saving throw, taking 10d8 Lightning damage on a
+    failed save or half as much damage on a successful one. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: One additional bolt leaps from the first target to another target for each
+        spell slot level above 6.
+tags: []

@@ -1,0 +1,51 @@
+name: Dancing Lights
+level: 0
+school: Illusion
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a bit of phosphorus
+        value_gp: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You create up to four torch-size lights within range, making them appear
+    as torches, lanterns, or glowing orbs that hover for the duration. Alternatively,
+    you combine the four lights into one glowing Medium form that is vaguely humanlike.
+    Whichever form you choose, each light sheds Dim Light in a 10foot radius.
+
+
+    As a Bonus Action, you can move the lights up to 60 feet to a space within range.
+    A light must be within 20 feet of another light created by this spell, and a light
+    vanishes if it exceeds the spell’s range.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

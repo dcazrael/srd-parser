@@ -1,0 +1,57 @@
+name: Illusory Script
+level: 1
+school: Illusion
+classes:
+- Bard
+- Warlock
+- Wizard
+casting_time:
+    type:
+    - minute
+    - ritual
+    cost: 1
+components:
+    verbal: false
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: ink worth 10+ GP, which the spell consumes
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 10 days
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You write on parchment, paper, or another suitable material and imbue
+    it with an illusion that lasts for the duration. To you and any creatures you
+    designate when you cast the spell, the writing appears normal, seems to be written
+    in your hand, and conveys whatever meaning you intended when you wrote the text.
+    To all others, the writing appears as if it were written in an unknown or magical
+    script that is unintelligible. Alternatively, the illusion can alter the meaning,
+    handwriting, and language of the text, though the language must be one you know.
+
+
+    If the spell is dispelled, the original script and the illusion both disappear.
+
+
+    A creature that has Truesight can read the hidden message.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

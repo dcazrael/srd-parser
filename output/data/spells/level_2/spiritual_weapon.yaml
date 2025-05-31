@@ -1,0 +1,55 @@
+name: Spiritual Weapon
+level: 2
+school: Evocation
+classes:
+- Cleric
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_hit
+    damage:
+    -   type: force
+        dice: 1d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You create a floating, spectral force that resembles a weapon of your
+    choice and lasts for the duration. The force appears within range in a space of
+    your choice, and you can immediately make one melee spell attack against one creature
+    within 5 feet of the force. On a hit, the target takes Force damage equal to 1d8
+    plus your spellcasting ability modifier.
+
+
+    As a Bonus Action on your later turns, you can move the force up to 20 feet and
+    repeat the attack against a creature within 5 feet of it. '
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for every slot level above 2.
+tags: []

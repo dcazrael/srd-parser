@@ -1,0 +1,52 @@
+name: Warding Bond
+level: 2
+school: Abjuration
+classes:
+- Cleric
+- Paladin
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: ''
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'duration)
+
+
+    **Duration**: 1 hour
+
+
+    You touch another creature that is willing and create a mystic connection between
+    you and the target until the spell ends. While the target is within 60 feet of
+    you, it gains a +1 bonus to AC and saving throws, and it has Resistance to all
+    damage. Also, each time it takes damage, you take the same amount of damage.
+
+
+    The spell ends if you drop to 0 Hit Points or if you and the target become separated
+    by more than 60 feet. It also ends if the spell is cast again on either of the
+    connected creatures.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: null
+subsections: []
+tags: []

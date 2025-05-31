@@ -1,0 +1,48 @@
+name: Sanctuary
+level: 1
+school: Abjuration
+classes:
+- Cleric
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a shard of glass from a mirror
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: You ward a creature within range. Until the spell ends, any creature
+    who targets the warded creature with an attack roll or a damaging spell must succeed
+    on a Wisdom saving throw or either choose a new target or lose the attack or spell.
+    This spell doesn’t protect the warded creature from areas of effect. The spell
+    ends if the warded creature makes an attack roll, casts a spell, or deals damage.
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections: []
+tags: []

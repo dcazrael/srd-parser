@@ -1,0 +1,66 @@
+name: Fear
+level: 3
+school: Illusion
+classes:
+- Bard
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a white feather
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: frightened
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Each creature in a 30-foot Cone must succeed on a Wisdom saving throw
+    or drop whatever it is holding and have the Frightened condition for the duration.
+
+
+    A Frightened creature takes the Dash action and moves away from you by the safest
+    route on each of its turns unless there is nowhere to move. If the creature ends
+    its turn in a space where it doesn’t have line of sight to you, the creature makes
+    a Wisdom saving throw. On a successful save, the spell ends on that creature.'
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections: []
+tags: []

@@ -1,0 +1,51 @@
+name: Light
+level: 0
+school: Evocation
+classes:
+- Bard
+- Cleric
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material:
+        required: true
+        consumed: false
+        description: a firefly or phosphorescent moss
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'You touch one Large or smaller object that isn’t being worn or carried
+    by someone else. Until the spell ends, the object sheds Bright Light in a 20-foot
+    radius and Dim Light for an additional 20 feet. The light can be colored as you
+    like.
+
+
+    Covering the object with something opaque blocks the light. The spell ends if
+    you cast it again.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

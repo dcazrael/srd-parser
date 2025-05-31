@@ -1,0 +1,46 @@
+name: Feather Fall
+level: 1
+school: Transmutation
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: reaction
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material:
+        required: true
+        consumed: false
+        description: a small feather or piece of down
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: Choose up to five falling creatures within range. A falling creature’s
+    rate of descent slows to 60 feet per round until the spell ends. If a creature
+    lands before the spell ends, the creature takes no damage from the fall, and the
+    spell ends for that creature.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

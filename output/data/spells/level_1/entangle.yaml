@@ -1,0 +1,64 @@
+name: Entangle
+level: 1
+school: Conjuration
+classes:
+- Druid
+- Ranger
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: restrained
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Grasping plants sprout from the ground in a 20-foot square within range.
+    For the duration, these plants turn the ground in the area into Difficult Terrain.
+
+
+    They disappear when the spell ends.
+
+
+    Each creature (other than you) in the area when you cast the spell must succeed
+    on a Strength saving throw or have the Restrained condition until the spell ends.
+    A Restrained creature can take an action to make a Strength (Athletics) check
+    against your spell save DC. On a success, it frees itself from the grasping plants
+    and is no longer Restrained by them.'
+save:
+    type: str
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: str
+subsections: []
+tags: []

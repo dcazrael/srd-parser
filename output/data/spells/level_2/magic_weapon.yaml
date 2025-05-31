@@ -1,0 +1,45 @@
+name: Magic Weapon
+level: 2
+school: Transmutation
+classes:
+- Paladin
+- Ranger
+- Sorcerer
+- Wizard
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'You touch a nonmagical weapon. Until the spell ends, that weapon becomes
+    a magic weapon with a +1 bonus to attack rolls and damage rolls. The spell ends
+    early if you cast it again. '
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The bonus increases to +2 with a level 3–5 spell slot. The bonus increases
+        to +3 with a level 6+ spell slot.
+tags: []

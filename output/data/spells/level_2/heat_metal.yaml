@@ -1,0 +1,72 @@
+name: Heat Metal
+level: 2
+school: Transmutation
+classes:
+- Bard
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a piece of iron and a flame
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: fire
+        dice: 2d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Choose a manufactured metal object, such as a metal weapon or a suit
+    of Heavy or Medium metal armor, that you can see within range. You cause the object
+    to glow red-hot. Any creature in physical contact with the object takes 2d8 Fire
+    damage when you cast the spell. Until the spell ends, you can take a Bonus Action
+    on each of your later turns to deal this damage again if the object is within
+    range.
+
+
+    If a creature is holding or wearing the object and takes the damage from it, the
+    creature must succeed on a Constitution saving throw or drop the object if it
+    can. If it doesn’t drop the object, it has Disadvantage on attack rolls and ability
+    checks until the start of your next turn. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 2.
+tags: []

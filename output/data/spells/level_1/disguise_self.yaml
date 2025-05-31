@@ -1,0 +1,55 @@
+name: Disguise Self
+level: 1
+school: Illusion
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You make yourself — including your clothing, armor, weapons, and other
+    belongings on your person— look different until the spell ends. You can seem
+
+
+    1 foot shorter or taller and can appear heavier or lighter. You must adopt a form
+    that has the same basic arrangement of limbs as you have. Otherwise, the extent
+    of the illusion is up to you.
+
+
+    The changes wrought by this spell fail to hold up to physical inspection. For
+    example, if you use this spell to add a hat to your outfit, objects pass through
+    the hat, and anyone who touches it would feel nothing.
+
+
+    To discern that you are disguised, a creature must take the Study action to inspect
+    your appearance and succeed on an Intelligence (Investigation) check against your
+    spell save DC.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

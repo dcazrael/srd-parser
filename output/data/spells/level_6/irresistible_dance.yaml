@@ -1,0 +1,63 @@
+name: Irresistible Dance
+level: 6
+school: Enchantment
+classes:
+- Bard
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: self
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'One creature that you can see within range must make a Wisdom saving
+    throw. On a successful save, the target dances comically until the end of its
+    next turn, during which it must spend all its movement to dance in place.
+
+
+    On a failed save, the target has the Charmed condition for the duration. While
+    Charmed, the target dances comically, must use all its movement to dance in place,
+    and has Disadvantage on Dexterity saving throws and attack rolls, and other creatures
+    have Advantage on attack rolls against it. On each of its turns, the target can
+    take an action to collect itself and repeat the save, ending the spell on itself
+    on a success.'
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections: []
+tags: []

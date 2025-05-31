@@ -1,0 +1,69 @@
+name: Clairvoyance
+level: 3
+school: Divination
+classes:
+- Bard
+- Cleric
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a focus worth 100+ GP, either a jeweled horn for hearing or a
+            glass eye for seeing
+        value_gp: null
+range:
+    type: point
+    distance: self
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_cast
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You create an Invisible sensor within range in a location familiar to
+    you (a place you have visited or seen before) or in an obvious location that is
+    unfamiliar to you (such as behind a door, around a corner, or in a grove of trees).
+    The intangible, invulnerable sensor remains in place for the duration.
+
+
+    When you cast the spell, choose seeing or hearing. You can use the chosen sense
+    through the sensor as if you were in its space. As a Bonus Action, you can switch
+    between seeing and hearing.
+
+
+    A creature that sees the sensor (such as a creature benefiting from See Invisibility
+    or Truesight) sees a luminous orb about the size of your fist.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

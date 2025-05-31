@@ -1,0 +1,79 @@
+name: Call Lightning
+level: 3
+school: Conjuration
+classes:
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: lightning
+        dice: 3d10
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A storm cloud appears at a point within range that you can see above
+    yourself. It takes the shape of a Cylinder that is 10 feet tall with a 60-foot
+    radius.
+
+
+    When you cast the spell, choose a point you can see under the cloud. A lightning
+    bolt shoots from the cloud to that point. Each creature within 5 feet of that
+    point makes a Dexterity saving throw, taking 3d10 Lightning damage on a failed
+    save or half as much damage on a successful one.
+
+
+    Until the spell ends, you can take a Magic action to call down lightning in that
+    way again, targeting the same point or a different one.
+
+
+    If you’re outdoors in a storm when you cast this spell, the spell gives you control
+    over that storm instead of creating a new one. Under such conditions, the spell’s
+    damage increases by 1d10. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 3
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d10
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d10 for each spell slot level above 3.
+tags: []

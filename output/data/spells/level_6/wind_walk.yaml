@@ -1,0 +1,78 @@
+name: Wind Walk
+level: 6
+school: Transmutation
+classes:
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a candle
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: timed
+    max_duration: 8 hours
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: stunned
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: prone
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You and up to ten willing creatures of your choice within range assume
+    gaseous forms for the duration, appearing as wisps of cloud. While in this cloud
+    form, a target has a Fly Speed of 300 feet and can hover; it has Immunity to the
+    Prone condition; and it has Resistance to Bludgeoning, Piercing, and Slashing
+    damage. The only actions a target can take in this form are the Dash action or
+    a Magic action to begin reverting to its normal form. Reverting takes 1 minute,
+    during which the target has the Stunned condition. Until the spell ends, the target
+    can revert to cloud form, which also requires a Magic action followed by a 1-minute
+    transformation.
+
+
+    If a target is in cloud form and flying when the effect ends, the target descends
+    60 feet per round for 1 minute until it lands, which it does safely. If it can’t
+    land after 1 minute, it falls the remaining distance.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

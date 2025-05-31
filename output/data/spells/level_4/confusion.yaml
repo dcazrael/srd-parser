@@ -1,0 +1,68 @@
+name: Confusion
+level: 4
+school: Enchantment
+classes:
+- Bard
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: three nut shells
+        value_gp: null
+range:
+    type: point
+    distance: 90 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: "Each creature in a 10-foot-radius Sphere centered on a point you choose\
+    \ within range must succeed on a Wisdom saving throw, or that target can’t take\
+    \ Bonus Actions or Reactions and must roll 1d10 at the start of each of its turns\
+    \ to determine its behavior for that turn, consulting the table below.\n\n| 1d10\
+    \ | Behavior for the Turn                                                    \
+    \                                                                            \
+    \                          | |------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\
+    \ | 1    | The target doesn’t take an action, and it uses all its movement to\
+    \ move. Roll 1d4 for the direction: 1, north; 2, east; 3, south; or 4, west. \
+    \                                 | | 2–6  | \tThe target doesn’t move or take\
+    \ actions.                                                                   \
+    \                                                                   | | 7-8  |\
+    \ The target doesn’t move, and it takes the Attack action to make one melee attack\
+    \ against a random creature within reach. If none are within reach, the target\
+    \ takes no action. | | 9–10 | The target chooses its behavior.               \
+    \                                                                            \
+    \                                                    |\n\nAt the end of each of\
+    \ its turns, an affected target repeats the save, ending the spell on itself on\
+    \ a success. "
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The Sphere’s radius increases by 5 feet for each spell slot level above
+        4.
+tags: []

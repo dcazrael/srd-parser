@@ -1,0 +1,98 @@
+name: Freezing Sphere
+level: 6
+school: Evocation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a miniature crystal sphere
+        value_gp: null
+range:
+    type: point
+    distance: 300 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: restrained
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: cold
+        dice: 10d6
+    condition: null
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage: null
+    condition: null
+    copy_from: on_save_fail
+    modifier: half
+description: 'A frigid globe streaks from you to a point of your choice within range,
+    where it explodes in a 60-foot-radius Sphere. Each creature in that area makes
+    a Constitution saving throw, taking 10d6 Cold damage on failed save or half as
+    much damage on a successful one.
+
+
+    If the globe strikes a body of water, it freezes the water to a depth of 6 inches
+    over an area 30 feet square. This ice lasts for 1 minute. Creatures that were
+    swimming on the surface of frozen water are trapped in the ice and have the Restrained
+    condition. A trapped creature can take an action to make a Strength (Athletics)
+    check against your spell save DC to break free.
+
+
+    You can refrain from firing the globe after completing the spell’s casting. If
+    you do so, a globe about the size of a sling bullet, cool to the touch, appears
+    in your hand. At any time, you or a creature you give the globe to can throw the
+    globe (to a range of 40 feet) or hurl it with a sling (to the sling’s normal range).
+    It shatters on impact, with the same effect as a normal casting of the spell.
+    You can also set the globe down without shattering it. After 1 minute, if the
+    globe hasn’t already shattered, it explodes. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 6
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d6
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d6 for each spell slot level above 6.
+tags: []

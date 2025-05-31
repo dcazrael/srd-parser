@@ -1,0 +1,74 @@
+name: Mass Suggestion
+level: 6
+school: Enchantment
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material:
+        required: true
+        consumed: false
+        description: a snake’s tongue
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 24 hours
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You suggest a course of activity — described in no more than 25 words
+    — to twelve or fewer creatures you can see within range that can hear and understand
+    you. The suggestion must sound achievable and not involve anything that would
+    obviously deal damage to any of the targets or their allies. For example, you
+    could say, “Walk to the village down that road, and help the villagers there harvest
+    crops until sunset.” Or you could say, “Now is not the time for violence. Drop
+    your weapons, and dance! Stop in an hour.”
+
+
+    Each target must succeed on a Wisdom saving throw or have the Charmed condition
+    for the duration or until you or your allies deal damage to the target. Each Charmed
+    target pursues the suggestion to the best of its ability. The suggested activity
+    can continue for the entire duration, but if the suggested activity can be completed
+    in a shorter time, the spell ends for a target upon completing it. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The duration is longer with a spell slot of level 7 (10 days), 8 (30 days),
+        or 9 ( 366 days).
+tags: []

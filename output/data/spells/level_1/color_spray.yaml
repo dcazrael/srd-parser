@@ -1,0 +1,60 @@
+name: Color Spray
+level: 1
+school: Illusion
+classes:
+- Bard
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a pinch of colorful sand
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: blinded
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: You launch a dazzling array of flashing, colorful light. Each creature
+    in a 15-foot Cone originating from you must succeed on a Constitution saving throw
+    or have the Blinded condition until the end of your next turn.
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

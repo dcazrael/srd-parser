@@ -1,0 +1,58 @@
+name: True Resurrection
+level: 9
+school: Necromancy
+classes:
+- Cleric
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: ''
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'which the spell consumes)
+
+
+    **Duration**: Instantaneous
+
+
+    You touch a creature that has been dead for no longer than 200 years and that
+    died for any reason except old age. The creature is revived with all its Hit Points.
+
+
+    This spell closes all wounds, neutralizes any poison, cures all magical contagions,
+    and lifts any curses affecting the creature when it died. The spell replaces damaged
+    or missing organs and limbs.
+
+
+    If the creature was Undead, it is restored to its non-Undead form.
+
+
+    The spell can provide a new body if the original no longer exists, in which case
+    you must speak the creature’s name. The creature then appears in an unoccupied
+    space you choose within 10 feet of you.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

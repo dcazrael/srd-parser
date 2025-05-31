@@ -1,0 +1,73 @@
+name: Unseen Servant
+level: 1
+school: Conjuration
+classes:
+- Bard
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a bit of string and of wood
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'This spell creates an Invisible, mindless, shapeless, Medium force that
+    performs simple tasks at your command until the spell ends. The servant springs
+    into existence in an unoccupied space on the ground within range. It has AC 10,
+    1 Hit Point, and a Strength of 2, and it can’t attack. If it drops to 0 Hit Points,
+    the spell ends.
+
+
+    Once on each of your turns as a Bonus Action, you can mentally command the servant
+    to move up to 15 feet and interact with an object. The servant can perform simple
+    tasks that a human could do, such as fetching things, cleaning, mending, folding
+    clothes, lighting fires, serving food, and pouring drinks.
+
+
+    Once you give the command, the servant performs the task to the best of its ability
+    until it completes the task, then waits for your next command.
+
+
+    If you command the servant to perform a task that would move it more than 60 feet
+    away from you, the spell ends.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

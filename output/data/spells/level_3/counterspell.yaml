@@ -1,0 +1,51 @@
+name: Counterspell
+level: 3
+school: Abjuration
+classes:
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: reaction
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: self
+duration:
+    type: timed
+    max_duration: ''
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'Verbal, Somatic, or Material components
+
+
+    **Range**: 60 feet **Components**: S **Duration**: Instantaneous
+
+
+    You attempt to interrupt a creature in the process of casting a spell. The creature
+    makes a Constitution saving throw. On a failed save, the spell dissipates with
+    no effect, and the action, Bonus Action, or Reaction used to cast it is wasted.
+    If that spell was cast with a spell slot, the slot isn’t expended.'
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: true
+    hands_free: 1
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

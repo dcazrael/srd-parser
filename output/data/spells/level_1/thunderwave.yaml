@@ -1,0 +1,66 @@
+name: Thunderwave
+level: 1
+school: Evocation
+classes:
+- Bard
+- Druid
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: thunder
+        dice: 2d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You unleash a wave of thunderous energy. Each creature in a 15-foot
+    Cube originating from you makes a Constitution saving throw. On a failed save,
+    a creature takes 2d8 Thunder damage and is pushed 10 feet away from you. On a
+    successful save, a creature takes half as much damage only.
+
+
+    In addition, unsecured objects that are entirely within the Cube are pushed 10
+    feet away from you, and a thunderous boom is audible within 300 feet. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 1.
+tags: []

@@ -1,0 +1,68 @@
+name: Ray of Sickness
+level: 1
+school: Necromancy
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_hit
+    damage: null
+    condition:
+        name: poisoned
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_hit
+    damage:
+    -   type: poison
+        dice: 2d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You shoot a greenish ray at a creature within range. Make a ranged spell
+    attack against the target. On a hit, the target takes 2d8 Poison damage and has
+    the Poisoned condition until the end of your next turn. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 1
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: attack_roll
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d8 for each spell slot level above 1.
+tags: []

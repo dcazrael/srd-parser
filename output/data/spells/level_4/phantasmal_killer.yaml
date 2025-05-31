@@ -1,0 +1,66 @@
+name: Phantasmal Killer
+level: 4
+school: Illusion
+classes:
+- Bard
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: psychic
+        dice: 4d10
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You tap into the nightmares of a creature you can see within range and
+    create an illusion of its deepest fears, visible only to that creature. The target
+    makes a Wisdom saving throw. On a failed save, the target takes 4d10 Psychic damage
+    and has Disadvantage on ability checks and attack rolls for the duration. On a
+    successful save, the target takes half as much damage, and the spell ends.
+
+
+    For the duration, the target makes a Wisdom saving throw at the end of each of
+    its turns. On a failed save, it takes the Psychic damage again. On a successful
+    save, the spell ends. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 4
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d10
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d10 for each spell slot level above 4.
+tags: []

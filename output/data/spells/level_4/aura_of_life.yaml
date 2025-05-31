@@ -1,0 +1,41 @@
+name: Aura of Life
+level: 4
+school: Abjuration
+classes:
+- Cleric
+- Paladin
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: An aura radiates from you in a 30-foot Emanation for the duration. While
+    in the aura, you and your allies have Resistance to Necrotic damage, and your
+    Hit Point maximums can’t be reduced. If an ally with 0 Hit Points starts its turn
+    in the aura, that ally regains 1 Hit Point.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

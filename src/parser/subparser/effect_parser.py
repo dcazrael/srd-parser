@@ -56,7 +56,7 @@ class EffectParser:
 
         damage_pattern: str = "|".join(DAMAGE_TYPES)
 
-        base_damage = re.findall(rf"(\d+d\d+(?: \+ \d+)?)[^\n]*?\b({damage_pattern})\b", self.text)
+        base_damage: List[str] = re.findall(rf"(\d+d\d+(?: \+ \d+)?)[^\n]*?\b({damage_pattern})\b", self.text)
         for dice, dtype in base_damage:
             matches.append(EffectMatch(
                 type="damage",
@@ -89,7 +89,7 @@ class EffectParser:
                 type="damage",
                 trigger="on_hit",
                 raw=f"{dice} {dtype} damage (plus spellcasting ability modifier)",
-                parsed={"dice": dice, "type": dtype, "plus": mod }
+                parsed={"dice": dice, "type": dtype, "plus": mod}
             ))
 
         # Ongoing damage at start/end of turn
@@ -112,7 +112,7 @@ class EffectParser:
         matches: List[EffectMatch] = []
 
         for condition in CONDITIONS:
-            # \b = Wortgrenze → damit z. B. "frightened" nicht in "unfrightened" matched
+            # \b = Wortgrenze → damit z.B. "frightened" nicht in "unfrightened" matched
             if re.search(rf"\b{condition}\b", self.text):
                 matches.append(EffectMatch(
                     type="condition",

@@ -1,0 +1,59 @@
+name: Levitate
+level: 2
+school: Transmutation
+classes:
+- Sorcerer
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a metal spring
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: 'One creature or loose object of your choice that you can see within
+    range rises vertically up to 20 feet and remains suspended there for the duration.
+    The spell can levitate an object that weighs up to 500 pounds. An unwilling creature
+    that succeeds on a Constitution saving throw is unaffected.
+
+
+    The target can move only by pushing or pulling against a fixed object or surface
+    within reach (such as a wall or a ceiling), which allows it to move as if it were
+    climbing. You can change the target’s altitude by up to 20 feet in either direction
+    on your turn. If you are the target, you can move up or down as part of your move.
+    Otherwise, you can take a Magic action to move the target, which must remain within
+    the spell’s range.
+
+
+    When the spell ends, the target floats gently to the ground if it is still aloft.'
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

@@ -1,0 +1,79 @@
+name: Shining Smite
+level: 2
+school: Transmutation
+classes:
+- Paladin
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: self
+duration:
+    type: timed
+    max_duration: ''
+targeting:
+    type: self
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: null
+    damage: null
+    condition:
+        name: invisible
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: null
+    damage:
+    -   type: radiant
+        dice: 2d6
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Strike
+
+
+    **Range**: Self
+
+
+    **Component**: V
+
+
+    **Duration**: Concentration, up to 1 minute
+
+
+    The target hit by the strike takes an extra 2d6 Radiant damage from the attack.
+    Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack
+    rolls against it have Advantage, and it can’t benefit from the Invisible condition. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d6
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d6 for each spell slot level above 2.
+tags: []

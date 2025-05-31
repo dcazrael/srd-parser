@@ -1,0 +1,84 @@
+name: Earthquake
+level: 8
+school: Transmutation
+classes:
+- Cleric
+- Druid
+- Sorcerer
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a fractured rock
+        value_gp: null
+range:
+    type: point
+    distance: 500 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_fail
+    damage: null
+    condition:
+        name: prone
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'Choose a point on the ground that you can see within range. For the
+    duration, an intense tremor rips through the ground in a 100-foot-radius circle
+    centered on that point. The ground there is Difficult Terrain.
+
+
+    When you cast this spell and at the end of each of your turns for the duration,
+    each creature on the ground in the area makes a Dexterity saving throw. On a failed
+    save, a creature has the Prone condition, and its Concentration is broken.
+
+
+    You can also cause the effects below. '
+save:
+    type: dex
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: dex
+subsections:
+-   name: Fissures
+    text: A total of 1d6 fissures open in the spell’s area at the end of the turn
+        you cast it. You choose the fissures’ locations, which can’t be under structures.
+        Each fissure is 1d10 × 10 feet deep and 10 feet wide, and it extends from
+        one edge of the spell’s area to another edge. A creature in the same space
+        as a fissure must succeed on a Dexterity saving throw or fall in. A creature
+        that successfully saves moves with the fissure’s edge as it opens.
+-   name: Structures
+    text: The tremor deals 50 Bludgeoning damage to any structure in contact with
+        the ground in the area when you cast the spell and at the end of each of your
+        turns until the spell ends. If a structure drops to 0 Hit Points, it collapses.  A
+        creature within a distance from a collapsing structure equal to half the structure’s
+        height makes a Dexterity saving throw. On a failed save, the creature takes
+        12d6 Bludgeoning damage, has the Prone condition, and is buried in the rubble,
+        requiring a DC 20 Strength (Athletics) check as an action to escape. On a
+        successful save, the creature takes half as much damage only.
+tags: []

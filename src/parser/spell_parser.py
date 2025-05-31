@@ -19,11 +19,6 @@ class SpellParser:
         self.text: str = text
         self.spells: List[Spell] = []
 
-        self.DAMAGE_TYPES: List[str] = [
-            "base", "initial", "acid", "fire", "cold", "lightning", "radiant", "necrotic",
-            "force", "thunder", "psychic", "poison", "bludgeoning", "piercing", "slashing"
-        ]
-
     def parse(self):
         start: int = self.text.find("#### ")
         if start == -1:

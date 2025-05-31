@@ -1,0 +1,66 @@
+name: Augury
+level: 2
+school: Divination
+classes:
+- Cleric
+- Druid
+- Wizard
+casting_time:
+    type:
+    - minute
+    - ritual
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: specially marked sticks, bones, cards, or other divinatory tokens
+            worth 25+ GP
+        value_gp: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'You receive an omen from an otherworldly entity about the results of
+    a course of action that you plan to take within the next 30 minutes. The GM chooses
+    the omen from the Omens table.
+
+
+    ###### Omens
+
+
+    | Omen         | For Results That Will Be … | |--------------|----------------------------|
+    | Weal         | Good                       | | Woe          | Bad                        |
+    | Weal and woe | Good and bad               | | Indifference | Neither good nor
+    bad       |
+
+
+    The spell doesn’t account for circumstances, such as other spells, that might
+    change the results.
+
+
+    If you cast the spell more than once before finishing a Long Rest, there is a
+    cumulative 25 percent chance for each casting after the first that you get no
+    answer.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

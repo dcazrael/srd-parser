@@ -1,0 +1,75 @@
+name: Moonbeam
+level: 2
+school: Evocation
+classes:
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a moonseed leaf
+        value_gp: null
+range:
+    type: point
+    distance: 120 feet
+duration:
+    type: concentration
+    max_duration: 1 minute
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: damage
+    trigger: on_save_fail
+    damage:
+    -   type: radiant
+        dice: 2d10
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high
+    Cylinder centered on a point within range. Until the spell ends, Dim Light fills
+    the Cylinder, and you can take a Magic action on later turns to move the Cylinder
+    up to 60 feet.
+
+
+    When the Cylinder appears, each creature in it makes a Constitution saving throw.
+    On a failed save, a creature takes 2d10 Radiant damage, and if the creature is
+    shape-shifted (as a result of the Polymorph spell, for example), it reverts to
+    its true form and can’t shape-shift until it leaves the Cylinder.
+
+
+    On a successful save, a creature takes half as much damage only. A creature also
+    makes this save when the spell’s area moves into its space and when it enters
+    the spell’s area or ends its turn there. A creature makes this save only once
+    per turn. '
+save:
+    type: con
+    dc_source: spellcasting
+    negates: false
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: damage
+        value: 1d10
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The damage increases by 1d10 for each spell slot level above 2.
+tags: []

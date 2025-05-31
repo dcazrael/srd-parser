@@ -1,0 +1,47 @@
+name: Foresight
+level: 9
+school: Divination
+classes:
+- Bard
+- Druid
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material:
+        required: true
+        consumed: false
+        description: a hummingbird feather
+        value_gp: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 8 hours
+targeting:
+    type: touch
+    filters: []
+    count: 1
+    selectable: true
+    area: null
+effects: []
+description: You touch a willing creature and bestow a limited ability to see into
+    the immediate future. For the duration, the target has Advantage on D20 Tests,
+    and other creatures have Disadvantage on attack rolls against it. The spell ends
+    early if you cast it again.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

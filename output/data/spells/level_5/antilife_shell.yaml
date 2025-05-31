@@ -1,0 +1,44 @@
+name: Antilife Shell
+level: 5
+school: Abjuration
+classes:
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 1 hour
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'An aura extends from you in a 10-foot Emanation for the duration. The
+    aura prevents creatures other than Constructs and Undead from passing or reaching
+    through it. An affected creature can cast spells or make attacks with Ranged or
+    Reach weapons through the barrier.
+
+
+    If you move so that an affected creature is forced to pass through the barrier,
+    the spell ends.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

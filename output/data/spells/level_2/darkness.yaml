@@ -1,0 +1,55 @@
+name: Darkness
+level: 2
+school: Evocation
+classes:
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material:
+        required: true
+        consumed: false
+        description: bat fur and a piece of coal
+        value_gp: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: 'For the duration, magical Darkness spreads from a point within range
+    and fills a 15-foot-radius Sphere. Darkvision can’t see through it, and nonmagical
+    light can’t illuminate it.
+
+
+    Alternatively, you cast the spell on an object that isn’t being worn or carried,
+    causing the Darkness to fill a 15-foot Emanation originating from that object.
+    Covering that object with something opaque, such as a bowl or helm, blocks the
+    Darkness.
+
+
+    If any of this spell’s area overlaps with an area of Bright Light or Dim Light
+    created by a spell of level 2 or lower, that other spell is dispelled.'
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []

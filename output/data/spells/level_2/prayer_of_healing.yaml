@@ -1,0 +1,49 @@
+name: Prayer of Healing
+level: 2
+school: Abjuration
+classes:
+- Cleric
+- Paladin
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: instantaneous
+    max_duration: null
+targeting:
+    type: creature
+    filters: null
+    count: 5
+    selectable: true
+    area: null
+effects: []
+description: 'Up to five creatures of your choice who remain within range for the
+    spell’s entire casting gain the benefits of a Short Rest and also regain 2d8 Hit
+    Points. A creature can’t be affected by this spell again until that creature finishes
+    a Long Rest. '
+save: null
+scaling:
+    mode: slot_level
+    base_level: 2
+    per_level: null
+    per_slot:
+        effect: healing
+        value: 1d8
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: The healing increases by 1d8 for each spell slot level above 2.
+tags: []

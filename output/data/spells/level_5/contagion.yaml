@@ -1,0 +1,75 @@
+name: Contagion
+level: 5
+school: Necromancy
+classes:
+- Cleric
+- Druid
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: false
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: Touch
+duration:
+    type: timed
+    max_duration: 7 days
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: poisoned
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: necrotic
+        dice: 11d8
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'Your touch inflicts a magical contagion. The target must succeed on
+    a Constitution saving throw or take 11d8 Necrotic damage and have the Poisoned
+    condition. Also, choose one ability when you cast the spell. While Poisoned, the
+    target has Disadvantage on saving throws made with the chosen ability.
+
+
+    The target must repeat the saving throw at the end of each of its turns until
+    it gets three successes or failures. If the target succeeds on three of these
+    saves, the spell ends on the target. If the target fails three of the saves, the
+    spell lasts for 7 days on it.
+
+
+    Whenever the Poisoned target receives an effect that would end the Poisoned condition,
+    the target must succeed on a Constitution saving throw, or the Poisoned condition
+    doesn’t end on it.'
+save:
+    type: con
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: con
+subsections: []
+tags: []

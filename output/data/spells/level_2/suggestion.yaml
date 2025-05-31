@@ -1,0 +1,73 @@
+name: Suggestion
+level: 2
+school: Enchantment
+classes:
+- Bard
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material:
+        required: true
+        consumed: false
+        description: a drop of honey
+        value_gp: null
+range:
+    type: point
+    distance: 30 feet
+duration:
+    type: concentration
+    max_duration: 8 hours
+targeting:
+    type: creature
+    filters: null
+    count: 1
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+description: 'You suggest a course of activity — described in no more than 25 words
+    — to one creature you can see within range that can hear and understand you. The
+    suggestion must sound achievable and not involve anything that would obviously
+    deal damage to the target or its allies. For example, you could say, “Fetch the
+    key to the cult’s treasure vault, and give the key to me.” Or you could say, “Stop
+    fighting, leave this library peacefully, and don’t return.”
+
+
+    The target must succeed on a Wisdom saving throw or have the Charmed condition
+    for the duration or until you or your allies deal damage to the target. The Charmed
+    target pursues the suggestion to the best of its ability. The suggested activity
+
+
+    can continue for the entire duration, but if the suggested activity can be completed
+    in a shorter time, the spell ends for the target upon completing it.'
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections: []
+tags: []

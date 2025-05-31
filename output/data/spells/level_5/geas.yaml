@@ -1,0 +1,83 @@
+name: Geas
+level: 5
+school: Enchantment
+classes:
+- Bard
+- Cleric
+- Druid
+- Paladin
+- Wizard
+casting_time:
+    type: action
+    cost: 1
+components:
+    verbal: true
+    somatic: false
+    material: null
+range:
+    type: point
+    distance: 60 feet
+duration:
+    type: timed
+    max_duration: 30 days
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects:
+-   type: condition
+    trigger: on_save_success
+    damage: null
+    condition:
+        name: charmed
+        duration:
+            type: special
+            max_duration: null
+        end_condition: null
+        stacking: replace
+    copy_from: null
+    modifier: null
+-   type: damage
+    trigger: on_save_success
+    damage:
+    -   type: psychic
+        dice: 5d10
+    condition: null
+    copy_from: null
+    modifier: null
+description: 'You give a verbal command to a creature that you can see within range,
+    ordering it to carry out some service or refrain from an action or a course of
+    activity as you decide. The target must succeed on a Wisdom saving throw or have
+    the Charmed condition for the duration. The target automatically succeeds if it
+    can’t understand your command.
+
+
+    While Charmed, the creature takes 5d10 Psychic damage if it acts in a manner directly
+    counter to your command. It takes this damage no more than once each day.
+
+
+    You can issue any command you choose, short of an activity that would result in
+    certain death. Should you issue a suicidal command, the spell ends.
+
+
+    A Remove Curse, Greater Restoration, or Wish spell ends this spell. '
+save:
+    type: wis
+    dc_source: spellcasting
+    negates: true
+scaling: null
+requirements:
+    breath_required: true
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: saving_throw
+    save_type: wis
+subsections:
+-   name: Using a Higher-Level Spell Slot
+    text: If you use a level 7 or 8 spell slot, the duration is 365 days. If you use
+        a level 9 spell slot, the spell lasts until it is ended by one of the spells
+        mentioned above.
+tags: []

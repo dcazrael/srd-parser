@@ -1,0 +1,40 @@
+name: Expeditious Retreat
+level: 1
+school: Transmutation
+classes:
+- Sorcerer
+- Warlock
+- Wizard
+casting_time:
+    type: bonus action
+    cost: 1
+components:
+    verbal: true
+    somatic: true
+    material: null
+range:
+    type: point
+    distance: Self
+duration:
+    type: concentration
+    max_duration: 10 minutes
+targeting:
+    type: creature
+    filters: null
+    count: null
+    selectable: true
+    area: null
+effects: []
+description: You take the Dash action, and until the spell ends, you can take that
+    action again as a Bonus Action.
+save: null
+scaling: null
+requirements:
+    breath_required: false
+    hands_free: 0
+    focus_available: true
+resolution:
+    type: automatic
+    save_type: null
+subsections: []
+tags: []
